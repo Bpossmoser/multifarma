@@ -27,25 +27,32 @@
 
 <script type="text/javascript">
         function ValidarSenha(){
-            var  senha = document.getElementById('senha').value.length;
-            var senha2 = document.getElementById('senha2').value.length;
+            var senha = document.getElementById('senha').value;
+			senha = senha.trim();
+            var senha2 = document.getElementById('senha2').value;
+			senha2 = senha2.trim();
+			var btn = document.getElementById('Cadastre');
             if(senha != senha2){
                 document.getElementById('Resul_Conf').style.color = "#ed0707";
                 document.getElementById('Resul_Conf').innerHTML = "Senha Não Corresponde com a Primeira!";
-				 var btn = document.getElementById('Cadastro');
-				 btn.disable = true;
-            if(senha2=="" || senha ==""){
+				btn.disable = true;
+				btn.style.opacity = "0.5";
+            if(senha2 == "" || senha == ""){
                 document.getElementById('Resul_Conf').innerHTML = "";
+				btn.disable = true;
+				btn.style.opacity = "0.5";
             }
-            if(senha == senha2 && senha ==""){
-                document.getElementById('Resul_Conf').innerHTML = ""; 
+            if(senha == senha2 && senha == ""){
+                document.getElementById('Resul_Conf').innerHTML = "";
+				btn.disable = true;
+				btn.style.opacity = "0.5";
             }    
-            }if(senha == senha2 && senha > 0){
+            }if(senha == senha2){
                 document.getElementById('Resul_Conf').style.color = "#198704";
                 document.getElementById('Resul_Conf').innerHTML = "Senhas estão Corretas!";
-				var btn = document.getElementById('Cadastro');
-				 btn.disable = false;
-            }
+	            btn.disable = false;
+				btn.style.opacity = null;
+	            }
         }
 </script> 	
 </head>
