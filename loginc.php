@@ -19,7 +19,7 @@ if ($conexao == true)
 
         echo "Encontrei no banco!<br>";
         $_SESSION ['logado'] = $email;
-        header ('Location: pagina_inicial.php');
+        header ('Location: shop.html');
     }
     else {
 

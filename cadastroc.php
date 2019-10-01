@@ -42,7 +42,7 @@ $sql="INSERT INTO cadastro_cliente (nome,cpf,telefone,data_nasc,email,senha) VAL
 
 if(mysqli_query($conexao,$sql)){
     echo "Cadastro feito";
-    header ('location:pagina_inicial.html');
+    header ('location:login_usuario.html');
 }
 else {
     echo "Error: ".$sql.mysqli_error($conexao);
