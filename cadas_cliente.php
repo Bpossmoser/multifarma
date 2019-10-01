@@ -100,10 +100,6 @@
 				<br>
 				<p id="Resul_Conf"></p>
 				
-
-				
-
-
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
