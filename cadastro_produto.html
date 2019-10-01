@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Contact V4</title>
+	<title>Cadastrar Produto</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -27,7 +27,7 @@
 </head>
 <body>
 
-
+<form action="cadastro_produtos.php" method="POST">
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
@@ -36,141 +36,92 @@
 					Cadastro 
 				</span>
 				<div class="row">
-					<div class="col-md-5 ">
+					<div class="col-md-8 ">
 				<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-					<span class="label-input100">Razão Social:</span>
-					<input class="input100" type="text" name="razao" >
+					<span class="label-input100">Nome do produto:</span>
+					<input class="input100" type="text" name="nome_produto" >
 					<span class="focus-input100"></span>
 				</div>
 					</div>
 
-				<div class="col-md-5 ">
+				<div class="col-md-4 ">
 				<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-					<span class="label-input100">Nome Fantasia:</span>
-					<input class="input100" type="text" name="fantasia" >
+					<span class="label-input100">Data de cadastro:</span>
+					<input class="input100" type="date" name="data" >
 					<span class="focus-input100"></span>
 				</div>
 				</div>
 				
 				
-                <div class="col-md-5 ">
+                <div class="col-md-12">
 				<div class="wrap-input100 validate-input" data-validate = "Campo Obrigatório">
-					<span class="label-input100">Inscrição Estadual:</span>
-					<input class="input100" type="text" name="inscricao_est" >
+						<span class="label-input100"> Descrição:</span>
+					<input class="input100" type="text" name="descricao" >
 					<span class="focus-input100"></span>
 				</div>
 				</div>
-				<div class="col-md-5 ">
+
+				<div class="col-md-3 ">
+						<div class="wrap -input100 validate-input" data-validate = "Campo Obrigatório">
+								<span class="label-input100"> Tipo:</span>
+								<select name ="tipo" id="toma">
+										<option value="">...</option>
+										<option value="generico">Genérico</option>
+										<option value="similar">Similar</option>
+										<option value="marca">Marca</option>
+								</select>
+						</div>
+				</div >	
+
+				<div class="col-md-3 ">
 				<div class="wrap-input100 validate-input" data-validate = "Campo Obrigatório">
-					<span class="label-input100">Inscrição Municipal:</span>
-					<input class="input100" type="text" name="inscricao_mun" >
+					<span class="label-input100">Medida:</span>
+					<input class="input100" type="text" name="peso" >
 					<span class="focus-input100"></span>
 				</div>
 				</div>
 
-				<div class="col-xs-2 ">
+				<div class="col-md-3 ">
 						<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-							<span class="label-input100">CNPJ:</span>
-							<input class="input100" type="text" name="cnpj">
+							<span class="label-input100">Quantidade:</span>
+							<input class="input100" type="text" name="quantidade">
 							<span class="focus-input100"></span>
 						</div>
 						</div>
 
-				<div class="col-md-5 ">
+				<div class="col-md-3 ">
 				<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-					<span class="label-input100">Logradouro:</span>
-					<input class="input100" type="text" name="logradouro" >
+					<span class="label-input100">Preço:</span>
+					<input class="input100" type="text" name="preco" >
 					<span class="focus-input100"></span>
 				</div>
 				</div>
 
-				<div class="col-md-2 ">
+				<div class="col-md-12 my-3">
 						<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-							<span class="label-input100">Numero Local:</span>
-							<input class="input100" type="int" name="num_local" >
-							<span class="focus-input100"></span>
-						</div>
-						</div>
-
-			<div class="col-xs-6 ">
-				<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-					<span class="label-input100">CEP:</span>
-					<input class="input100" type="text" name="cep" >
-					<span class="focus-input100"></span>
-					</div>
-					</div>
-
-						<div class="col-md-7 ">
-								<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-									<span class="label-input100">Bairro:</span>
-									<input class="input100" type="text" name="bairro" >
-									<span class="focus-input100"></span>
-								</div>
-								</div>
-
-				<div class="col-md-10 ">
-				<div class="wrap-input100 ">
-					<span class="label-input100">Complemento:</span>
-					<input class="input100" type="text" name="Complemento" >
-					<span class="focus-input100"></span>
+						<input type="file" name="foto" placeholder="Imagem">
 				</div>
 				</div>
-
-				<div class="col-md-5 ">
-				<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-					<span class="label-input100">Cidade:</span>
-					<input class="input100" type="text" name="Cidade" >
-					<span class="focus-input100"></span>
-				</div>
-				</div>
-
-				<div class="col-xs-1 ">
-						<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-							<span class="label-input100">UF:</span>
-							<input class="input100" type="text" name="uf" >
-							<span class="focus-input100"></span>
-						</div>
-						</div>
-
-						<div class="col-md-4 ">
-								<div class="wrap-input100">
-									<span class="label-input100">Telefone:</span>
-									<input class="input100" type="text" name="telefone" >
-									<span class="focus-input100"></span>
-								</div>
-								</div>
-				<div class="col-md-5 ">
-				<div class="wrap-input100 validate-input" data-validate = "Campo Obrigatório. EX.: ex@gmail.com">
-				<span class="label-input100"> Email da Empresa:</span>
-				<input class="input100" type="text" name="email" >
-				<span class="focus-input100"></span>
-				</div>
-				</div>
-
-				<div class="col-xs-4 ">
-					<div class="wrap-input100 validate-input" data-validate = "Campo Obrigatório">
-						<span class="label-input100">Senha:</span>
-						<input class="input100" type="text" name="senha" >
-						<span class="focus-input100"></span>
-					</div>
-					</div>
-					</div>
-
+				
+                <div class="col-md-12">
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
 						<button class="contact100-form-btn">
 							<span>
-							Cadastre-se
+							Cadastrar
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</span>
 						</button>
 					</div>
 				</div>
+				</div>
+				</div>
 			</fieldset>
 			</form>
 		</div>
 	</div>
+	</form>
 
 
 
