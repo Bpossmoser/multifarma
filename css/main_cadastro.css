@@ -350,7 +350,7 @@ textarea.input100 {
 
 @media (max-width: 576px) {
   .wrap-contact100 {
-    padding: 72px 15px 65px 15px;
+    padding: 100px 15px 65px 15px;
   }
 }
 
@@ -517,7 +517,7 @@ textarea.input100 {
 
 .select2-container .select2-results__option[aria-selected] {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom:20px;
 }
 
 .select2-container .select2-results__option[aria-selected="true"] {
