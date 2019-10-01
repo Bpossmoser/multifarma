@@ -1,5 +1,5 @@
 <?php
-    $servidor="localhost";
+    $servidor="mysql05-farm76.kinghost.net";
     $usuario="multifarma";
     $senha="pharma123";
     $db="multifarma";
