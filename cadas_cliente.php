@@ -35,22 +35,22 @@
             if(senha != senha2){
                 document.getElementById('Resul_Conf').style.color = "#ed0707";
                 document.getElementById('Resul_Conf').innerHTML = "Senha Não Corresponde com a Primeira!";
-				btn.disable = true;
+				btn.disabled = true;
 				btn.style.opacity = "0.5";
             if(senha2 == "" || senha == ""){
                 document.getElementById('Resul_Conf').innerHTML = "";
-				btn.disable = true;
+				btn.disabled = true;
 				btn.style.opacity = "0.5";
             }
             if(senha == senha2 && senha == ""){
                 document.getElementById('Resul_Conf').innerHTML = "";
-				btn.disable = true;
+				btn.disabled = true;
 				btn.style.opacity = "0.5";
             }    
             }if(senha == senha2){
                 document.getElementById('Resul_Conf').style.color = "#198704";
                 document.getElementById('Resul_Conf').innerHTML = "Senhas estão Corretas!";
-	            btn.disable = false;
+	            btn.disabled = false;
 				btn.style.opacity = null;
 	            }
         }
