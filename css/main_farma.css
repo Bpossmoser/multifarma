@@ -135,8 +135,7 @@ iframe {
 
 /*---------------------------------------------*/
 .container {
-  max-width: 1250px;
-  
+	max-width: 1500px;
 }
 
 
@@ -164,12 +163,11 @@ background: linear-gradient(0deg, rgba(227,90,90,1) 0%, rgba(129,13,13,1) 100%);
 }
 
 .wrap-contact100 {
-  width: 1000px;
+  width: 700px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
-  padding: 62px 55px 45px 150px;
-  
+  padding: 42px 55px 45px 55px;
 }
 
 
@@ -184,9 +182,9 @@ background: linear-gradient(0deg, rgba(227,90,90,1) 0%, rgba(129,13,13,1) 100%);
   display: block;
   font-family: Poppins-Bold;
   font-size: 39px;
-  color: #201f1f;
+  color: #333333;
   line-height: 1.2;
- text-align: center;
+  text-align: center;
   padding-bottom: 44px;
 }
 
@@ -199,23 +197,16 @@ background: linear-gradient(0deg, rgba(227,90,90,1) 0%, rgba(129,13,13,1) 100%);
   width: 100%;
   position: relative;
   border-bottom: 2px solid #d9d9d9;
-  padding-bottom: 13px;
-  margin-bottom: 27px;
-  
-}
-.rom {
-  margin-left: 0px;
-  margin-right: 95px;
-
-  
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .label-input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
   color: #030303;
-  line-height: 0.5;
-
+  line-height: 1.0;
+  padding-left: 5px;
 }
 
 .input100 {
@@ -225,8 +216,8 @@ background: linear-gradient(0deg, rgba(227,90,90,1) 0%, rgba(129,13,13,1) 100%);
   font-family: Poppins-Medium;
   font-size: 18px;
   color: #333333;
-  line-height: 1.2;
- 
+  line-height: 1.0;
+  padding: 0 5px;
 }
 
 .focus-input100 {
@@ -236,7 +227,6 @@ background: linear-gradient(0deg, rgba(227,90,90,1) 0%, rgba(129,13,13,1) 100%);
   height: 100%;
   top: 0;
   left: 0;
-  
   pointer-events: none;
 }
 
@@ -260,7 +250,7 @@ background: linear-gradient(0deg, rgba(227,90,90,1) 0%, rgba(129,13,13,1) 100%);
 
 /*---------------------------------------------*/
 input.input100 {
-  height: 20px;
+  height: 40px;
 }
 
 
@@ -268,7 +258,6 @@ textarea.input100 {
   min-height: 110px;
   padding-top: 9px;
   padding-bottom: 13px;
-  
 }
 
 
@@ -295,7 +284,7 @@ textarea.input100 {
 }
 
 .wrap-contact100-form-btn {
-  width: 50%;
+  width: 100%;
   display: block;
   position: relative;
   z-index: 1;
@@ -339,7 +328,6 @@ textarea.input100 {
 
 .wrap-contact100-form-btn:hover .contact100-form-bgbtn {
   left: 0;
-  right: 0;
 }
 
 .contact100-form-btn i {
@@ -565,12 +553,6 @@ textarea.input100 {
   color: #333333;
   line-height: 1.2;
 }
-.contact100{
-
-  display: block;
-  margin: auto;
-}
-
 
 
 
