@@ -32,6 +32,8 @@
             if(senha != senha2){
                 document.getElementById('Resul_Conf').style.color = "#ed0707";
                 document.getElementById('Resul_Conf').innerHTML = "Senha Não Corresponde com a Primeira!";
+				 var btn = document.getElementById('Cadastro');
+				 btn.disable = true;
             if(senha2=="" || senha ==""){
                 document.getElementById('Resul_Conf').innerHTML = "";
             }
@@ -41,6 +43,8 @@
             }if(senha == senha2 && senha > 0){
                 document.getElementById('Resul_Conf').style.color = "#198704";
                 document.getElementById('Resul_Conf').innerHTML = "Senhas estão Corretas!";
+				var btn = document.getElementById('Cadastro');
+				 btn.disable = false;
             }
         }
 </script> 	
@@ -103,7 +107,7 @@
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" href="login_usuario.html">
+						<button class="contact100-form-btn" href="login_usuario.html" id="Cadastre">
 							<span>
 							Cadastre-se
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

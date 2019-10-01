@@ -16,11 +16,10 @@ $logarray = $array['email'];
 $senha = hash('sha256', $_POST['senha']);
 $senha2 = hash('sha256', $_POST['senha2']);
 
-if (strcmp( $senha,  $senha2) != 0 ){
-    echo "erro";
-    header ('location:cadas_cliente.php?erro=senha');
-    die();
-}
+// <if (strcmp( $senha,  $senha2) != 0 ){
+// //     echo "erro";
+// //     header ('location:cadas_cliente.php?erro=senha');
+// //     die();
 else {
     if($logarray == $email){
  
