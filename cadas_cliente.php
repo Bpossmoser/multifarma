@@ -25,7 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main_cadastro.css">
 <!--===============================================================================================-->
 
-<script> type="text/javascript">
+<script type="text/javascript">
         function ValidarSenha(){
             var  senha = document.getElementById('senha').value.length;
             var senha2 = document.getElementById('senha2').value.length;
