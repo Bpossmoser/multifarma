@@ -24,6 +24,36 @@
 	<link rel="stylesheet" type="text/css" href="css/util_farma.css">
 	<link rel="stylesheet" type="text/css" href="css/main_farma.css">
 <!--===============================================================================================-->
+<script type="text/javascript">
+        function ValidarSenha(){
+            var senha = document.getElementById('senha').value;
+			senha = senha.trim();
+            var senha2 = document.getElementById('senha2').value;
+			senha2 = senha2.trim();
+			var btn = document.getElementById('Cadastre');
+            if(senha != senha2){
+                document.getElementById('Resul_Conf').style.color = "#ed0707";
+                document.getElementById('Resul_Conf').innerHTML = "Senha Não Corresponde com a Primeira!";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+            if(senha2 == "" || senha == ""){
+                document.getElementById('Resul_Conf').innerHTML = "";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+            }
+            if(senha == senha2 && senha == ""){
+                document.getElementById('Resul_Conf').innerHTML = "";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+            }    
+            }if(senha == senha2){
+                document.getElementById('Resul_Conf').style.color = "#198704";
+                document.getElementById('Resul_Conf').innerHTML = "Senhas estão Corretas!";
+	            btn.disabled = false;
+				btn.style.opacity = null;
+	            }
+        }
+</script>
 </head>
 <body>
 
@@ -113,11 +143,21 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" data-validate = "password is required">
 					<span class="label-input100">Senha:</span>
-					<input class="input100" type="text" name="senha" >
+					<input class="input100"  pattern="[a-zA-Z0-9]+" type="password" name="senha"
+					id = "senha" >
 					<span class="focus-input100"></span>
 				</div>
+				
+				<div class="wrap-input100 validate-input" data-validate="password is required">
+					<span class="label-input100">Confirme sua senha:</span>
+					<input class="input100" pattern="[a-zA-Z0-9]+" type="password" name="senha2" id="senha2"
+					 onkeyup="ValidarSenha();">
+					<span class="focus-input100"></span>
+				</div>
+				<br>
+				<p id="Resul_Conf"></p>
 
 
 				<div class="container-contact100-form-btn">

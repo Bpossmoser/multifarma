@@ -20,20 +20,14 @@ $senha2 = hash('sha256', $_POST['senha2']);
 
     if($logarray == $email){
  
-        echo"<script language='javascript' type='text/javascript'>
+        echo "<script language='javascript' type='text/javascript'>
         alert('Esse email já existe');
+        location.href = 'cadas_cliente.php'; 
         </script>";
-        header ('location:cadas_cliente.php?erro=email');
-       
+        
         die(); 
     }
    
-
-
-
-
-
-
 $sql="INSERT INTO cadastro_cliente (nome,cpf,telefone,data_nasc,email,senha) VALUES ('$nome','$cpf','$telefone','$date','$email','$senha')";
 
 if(mysqli_query($conexao,$sql)){
