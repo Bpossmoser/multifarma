@@ -3,9 +3,10 @@
 include("conexao.php");
 
 session_start();
-$email = $_POST['email'];
+$nome = $_POST['nome'];
 
-echo $email,"<br>";
+
+echo $nome,"<br>";
 
 $senha = hash('sha256', $_POST['senha']);
 
@@ -19,7 +20,7 @@ if ($conexao == true)
 
         echo "Encontrei no banco!<br>";
         $_SESSION ['logado'] = $email;
-        header ('Location: shop.html');
+        header ('Location: shop.php');
     }
     else {
 

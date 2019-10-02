@@ -283,6 +283,18 @@ textarea.input100 {
   padding-top: 13px;
 }
 
+.container2-contact100-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 13px;
+}
+
+
 .wrap-contact100-form-btn {
   width: 100%;
   display: block;

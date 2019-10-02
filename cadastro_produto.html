@@ -27,10 +27,9 @@
 </head>
 <body>
 
-<form action="cadastro_produtos.php" method="POST">
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form"  action="cadastro_produtos.php" method="POST">
 				<fieldset id="n">
 				<span class="contact100-form-title">
 					Cadastro 
@@ -47,7 +46,7 @@
 				<div class="col-md-4 ">
 				<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
 					<span class="label-input100">Data de cadastro:</span>
-					<input class="input100" type="date" name="data" >
+					<input class="input100" type="date" name="datac" >
 					<span class="focus-input100"></span>
 				</div>
 				</div>
@@ -61,7 +60,7 @@
 				</div>
 				</div>
 
-				<div class="col-md-3 ">
+				<div class="col-md-4 ">
 						<div class="wrap -input100 validate-input" data-validate = "Campo Obrigatório">
 								<span class="label-input100"> Tipo:</span>
 								<select name ="tipo" id="toma">
@@ -73,7 +72,7 @@
 						</div>
 				</div >	
 
-				<div class="col-md-3 ">
+				<div class="col-md-4 ">
 				<div class="wrap-input100 validate-input" data-validate = "Campo Obrigatório">
 					<span class="label-input100">Medida:</span>
 					<input class="input100" type="text" name="peso" >
@@ -81,15 +80,7 @@
 				</div>
 				</div>
 
-				<div class="col-md-3 ">
-						<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
-							<span class="label-input100">Quantidade:</span>
-							<input class="input100" type="text" name="quantidade">
-							<span class="focus-input100"></span>
-						</div>
-						</div>
-
-				<div class="col-md-3 ">
+				<div class="col-md-4 ">
 				<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
 					<span class="label-input100">Preço:</span>
 					<input class="input100" type="text" name="preco" >
@@ -121,7 +112,6 @@
 			</form>
 		</div>
 	</div>
-	</form>
 
 
 
