@@ -24,20 +24,6 @@
 
 <body>
 
-   <?php session_start();
-
-    if (isset($_SESSION['logado'])== true){
-
-      echo "BEM-VINDO ",$_SESSION['logado'];"<br><br>";
-        // echo '<br><br><a href="paginasair.php">(SAIR)</a>';
-       }
-       else {
-    
-        header ('location:login_usuario.html');
-       }
-  ?>
- 
-  
   <div class="site-wrap">
 
 
