@@ -8,13 +8,13 @@
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <script src="https://kit.fontawesome.com/6b35525bc0.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
 
   <link rel="stylesheet" href="css/aos.css">
 
@@ -23,66 +23,13 @@
 </head>
 
 <body>
-<?php
-     session_start();
-     if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
-     {
-      unset($_SESSION['email']);
-      unset($_SESSION['senha']);
-      header('location:login_usuario.html');
-      }
-    
-    $logado = $_SESSION['email'];
-  
-  echo" Bem-vindo $logado";
-  ?>
+
   <div class="site-wrap">
 
-
-    <div class="site-navbar py-2">
-
-      <div class="search-wrap">
-        <div class="container">
-          <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-          <form action="#" method="post">
-            <input type="text" name="pesquisa" class="form-control" placeholder="Pesquisar Produto...">
-          </form>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between">
-          <div class="logo">
-            <div class="site-logo">
-
-            </div>
-          </div>
-          <div class="main-nav d-none d-lg-block">
-            <nav class="site-navigation text-right text-md-center" role="navigation">
-              <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.html">Lojas</a></li>
-                <li class="active"><a href="shop.php">Produtos</a></li>
-                <li class="has-children"><a>Opções</a>
-                  <ul class="dropdown">
-                    <li><a href="logout.php">Sair</a></li>
-                   
-                </li>
-              </ul>
-              </ul>
-            </nav>
-          </div>
-          <div class="icons">
-            <a class="icons-btn d-inline-block js-search-open" name=><span class="icon-search"><span><a>
-            <a href="cart.html" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
-            </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
-          </div>
-        </div>
-      </div>
-    </div>
+  <?php 
+  require('nav.php');
+  ?>
+  
 
     <div class="bg-light py-3">
       <div class="container">
