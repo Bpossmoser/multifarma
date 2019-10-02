@@ -127,7 +127,7 @@
           while ($row_prof = mysqli_fetch_assoc($resultado)) {
 
             echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
-            echo "<a href='shop-single.html'> <img src='images/product_03.png' alt='Image'></a>";
+            echo "<a href='produto.php'> <img src='images/product_03.png' alt='Image'></a>";
             echo "<h3 class='text-dark'><a href='#'>" . $row_prof['nome_produto'] . "</a></h3>";
             echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
             echo "</div>";
@@ -138,8 +138,8 @@
 
         <!-- <div class="row">
           <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="shop-single.html"> <img src="images/product_01.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="shop-single.html">Bioderma</a></h3>
+            <a href="produto.php"> <img src="images/product_01.png" alt="Image"></a>
+            <h3 class="text-dark"><a href="produto.php">Bioderma</a></h3>
             <p class="price"><del>95.00</del> &mdash; $55.00</p>
           </div>
         </div> -->
