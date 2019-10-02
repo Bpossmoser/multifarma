@@ -3,13 +3,13 @@ include("conexao.php");
 
 session_start();
 
-   //if(isset($_POST['email'])){
+  
     $email = $_POST['email'];
     
     
-    //echo $email,"<br>";
+   
     
-    $senha = $_POST['senha'];
+    $senha = hash('sha256', $_POST['senha']);
     
     if ($conexao == true){
         $resultado_comando = mysqli_query($conexao,"SELECT * FROM cadfarmacia WHERE email = '$email' AND senha = '$senha'; ");
@@ -17,15 +17,16 @@ session_start();
         $res = mysqli_num_rows($resultado_comando);
         if ($res> 0) {
             
-            // retorno do select se o ligin for encontrado
-            $row = mysqli_fetch_assoc($resultado_comando);
-            
-            $_SESSION ['logado'] = $row["razao"];
-            echo "Deu certo ".$row['razao'];
-        }
+            $_SESSION['email'] = $email;
+            $_SESSION['senha'] = $senha;
+            header('location:pagina_inicial.php');
+            }
         else {
     
-            echo "Ninguém com esse login e senha <br>";
+             unset ($_SESSION['email']);
+             unset ($_SESSION['senha']);
+             header('location:login_farmacia.html');
+       
         }
     }
   

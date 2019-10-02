@@ -18,13 +18,16 @@ if ($conexao == true)
     $res = mysqli_num_rows($resultado_comando);
     if ($res> 0) {
 
-        echo "Encontrei no banco!<br>";
-        $_SESSION ['logado'] = $email;
-        header ('Location: shop.php');
-    }
+        $_SESSION['email'] = $email;
+        $_SESSION['senha'] = $senha;
+        header('location:shop.php');
+        }
     else {
 
-        echo "Ninguém com esse login e senha <br>";
+         unset ($_SESSION['email']);
+         unset ($_SESSION['senha']);
+         header('location:login_usuario.html');
+   
     }
 }
 else{

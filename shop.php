@@ -23,7 +23,19 @@
 </head>
 
 <body>
-
+<?php
+     session_start();
+     if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
+     {
+      unset($_SESSION['email']);
+      unset($_SESSION['senha']);
+      header('location:login_usuario.html');
+      }
+    
+    $logado = $_SESSION['email'];
+  
+  echo" Bem-vindo $logado";
+  ?>
   <div class="site-wrap">
 
 
@@ -48,13 +60,13 @@
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">Lojas</a></li>
                 <li class="active"><a href="shop.php">Produtos</a></li>
-                <li class="has-children"><a>Login</a>
+                <li class="has-children"><a>Opções</a>
                   <ul class="dropdown">
-                    <li><a href="login_usuario.html">Entrar</a></li>
-                    <li><a href="login_farmacia.html">Farmácia</a></li>
+                    <li><a href="logout.php">Sair</a></li>
+                   
                 </li>
               </ul>
               </ul>
