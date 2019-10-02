@@ -31,6 +31,7 @@
             var senha2 = document.getElementById('senha2').value;
 			senha2 = senha2.trim();
 			var btn = document.getElementById('Cadastre');
+			
             if(senha != senha2){
                 document.getElementById('Resul_Conf').style.color = "#ed0707";
                 document.getElementById('Resul_Conf').innerHTML = "Senha Não Corresponde com a Primeira!";
@@ -163,7 +164,7 @@
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn">
+						<button class="contact100-form-btn" href="login_farmacia.html" id="Cadastre">
 							<span>
 							Cadastre-se
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
