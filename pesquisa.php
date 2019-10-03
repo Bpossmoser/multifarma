@@ -69,8 +69,7 @@ include("conexao.php");
 $pesquisa=$_POST['pesquisar'];
 
 $sqli = mysqli_query($conexao,"SELECT * FROM cadastro_produtos WHERE nome_produto='$pesquisa' ");
-$row_prof = mysqli_fetch_assoc($sqli);
-$Resu = mysqli_num_rows($sqli); 
+while ($row_prof = mysqli_fetch_array($resultado)) { 
 if ($Resu > 0) {
     while ($Resu) {
       echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
