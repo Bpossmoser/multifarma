@@ -76,7 +76,7 @@
                echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
                echo "</div>";
         }
-
+      }
         
     
 
