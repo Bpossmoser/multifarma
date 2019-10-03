@@ -74,7 +74,7 @@
           </div>
           <div class="icons">
             <a class="icons-btn d-inline-block js-search-open" name=><span class="icon-search"><span><a>
-            <a href="cart.html" class="icons-btn d-inline-block bag">
+            <a href="carrinho.php" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
               <span class="number">2</span>
             </a>

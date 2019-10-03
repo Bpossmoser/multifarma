@@ -30,7 +30,7 @@
 
   <?php 
   require('nav.php');
-  
+
   ?>
 
     <div class="site-blocks-cover inner-page" style="background-image: url('images/hero_1.jpg');">
@@ -138,7 +138,7 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">
+                  <img src="images/barbara.jpg" alt="Image placeholder" class="mb-4">
                   <h3 class="block-38-heading h4">Bárbara Possmoser</h3>
                   <p class="block-38-subheading">CEO/CTO</p>
                 </div>
@@ -172,7 +172,7 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/person_1.jpg" alt="Image placeholder" class="mb-4">
+                  <img src="images/barbara.jpg.jpg" alt="Image placeholder" class="mb-4">
                   <h3 class="block-38-heading h4">Gilberto Rocha</h3>
                   <p class="block-38-subheading">CFO</p>
                 </div>
@@ -204,11 +204,15 @@
               <h3 class="footer-heading mb-4">Sobre Nós</h3>
               <p>A multifarma é uma empresa voltada para as compras virtuais de produtos farmacêuticos, oferecendo uma plataforma com os produtos e preços disponibilizados por cada farmácia, podendo fazer pedidos e receber o produto na residência..</p>
             </div>
+         </div>
 
-          </div>
+         <div class="col-md-12 col-lg-6 ">
+         </div>
+
+
          
-          <div class="col-md-6 col-lg-3">
-            <div class="block-5 mb-5">
+          <div class="col-md-12 col-lg-3 ">
+            <div class="block-5 mb-6">
               <h3 class="footer-heading mb-4">Contate-nos!</h3>
               <ul class="list-unstyled">
                 <li class="address">Km 228, Lote 2A, BR-364 - Zona Rural, Cacoal-RO, 76960-970</li>
@@ -226,9 +230,8 @@
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
               <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"
-                class="text-primary">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados Multifarma.
+            </p>
             </p>
           </div>
 
