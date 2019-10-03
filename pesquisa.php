@@ -69,9 +69,8 @@ include("conexao.php");
 $pesquisa=$_POST['pesquisar'];
 
 $sqli = mysqli_query($conexao,"SELECT * FROM cadastro_produtos WHERE nome_produto='$pesquisa' ");
-while ($row_prof = mysqli_fetch_array($resultado)) { 
-if ($Resu > 0) {
-    while ($Resu) {
+if (mysqli_num_rows($resultado) > 0) {
+  while ($row_prof = mysqli_fetch_assoc($resultado)) {
       echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
       echo "<a href='produto.php?id=".$row_prof['id']."'>";
       echo '<img src="data:image/png;base64,'. base64_encode($row_prof['foto']).'" width = 250 heigth = 250 />';
@@ -79,15 +78,11 @@ if ($Resu > 0) {
       echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
       echo "</div>";
     }
-}
+  }
 
-else{
+ else{
     echo"Esse produto não foi encontrado";
 }
-
-
-
-
 
 ?>
         </div>
