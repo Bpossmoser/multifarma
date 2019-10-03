@@ -29,6 +29,8 @@
 
   <?php 
   require('nav.php');
+  require('conexao.php');
+  
   ?>
 
     <div class="bg-light py-3">
@@ -59,6 +61,8 @@
                   </tr>
                 </thead>
                 <tbody>
+                  
+                  
                   <tr>
                     <td class="product-thumbnail">
                       <img src="images/product_02.png" alt="Image" class="img-fluid">

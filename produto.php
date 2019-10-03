@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <title>Pharma &mdash; Colorlib Template</title>
+  <title>produto</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -81,9 +81,12 @@
               </div>
     
             </div>
-            <p><a href="carrinho.php" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Adicionar ao carrinho</a></p>
+            <?php
+            require('conexao.php');
+           
+            echo '<p><a href="carrinho.php" id="'.$row_prof['id'].'"class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Adicionar ao carrinho</a></p>';
 
-            
+            ?>
 
     
           </div>

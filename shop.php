@@ -49,15 +49,12 @@
             <input type="text" name="filtro" id="amount" class="form-control border-0 pl-0 bg-white">
           </div>
           <div class="col-lg-6">
-            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar po Referência</h3>
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Referência</h3>
             <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
               <a class="dropdown-item" href="#">Relevância</a>
-              <a class="dropdown-item" href="#">Nome, A to Z</a>
-              <a class="dropdown-item" href="#">Nome, Z to A</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Preço, baixo para alto</a>
-              <a class="dropdown-item" href="#">Preço, maior para menor</a>
+              <a class="dropdown-item" href="filtro.php">Nome, A to Z</a>
+              <a class="dropdown-item" href="filtro1.php">Nome, Z to A</a>
             </div>
           </div>
         </div>
