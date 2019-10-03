@@ -68,27 +68,23 @@ include("conexao.php");
 
 $pesquisa=$_POST['pesquisar'];
 
-$sqli = mysqli_query($conexao,"SELECT * FROM produtos WHERE LIMIT '%$pesquisa%' 5 '");
+$sqli = mysqli_query($conexao,"SELECT * FROM cadastro_produtos WHERE nome_produto='$pesquisa' ");
 $row_prof = mysqli_fetch_assoc($sqli);
 $Resu = mysqli_num_rows($sqli); 
 if ($Resu > 0) {
     while ($Resu) {
-     ?>
-     <html>
-     <body>
-     <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="produto.php"><img src="<?php $row_prof[''] ?>" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php"><?php $row_prof['nome_produto'] ?></a></h3>
-            <p class="price"><?php $row_prof['preco'] ?></p>
-          </div>    
-     </body>
-     </html>
+      echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
+      echo "<a href='farmacia.php?id=" . $row_prof['id'] . "'> <img src='images/cor1.jpg' alt='Image'></a>";
+      echo "<h3 class='text-dark'><a href='farmacia.php'>" . $row_prof['fantasia'] . "</a></h3>";
+      echo "</div>";
     }
 }
-<?php
+
 else{
     echo"Esse produto não foi encontrado";
 }
+
+
 
 
 
