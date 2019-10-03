@@ -12,7 +12,7 @@
     //$imagetmp = $_FILES['foto']['tmp_name'];
 
         $sql = "INSERT INTO cadastro_produtos (nome_produto, datac, descricao, tipo, peso, preco, foto) 
-        VALUES ('$nome_produto', '$data_cadastro',  '$descricao',  '$tipo','$peso', '$preco', '$imagetmp')";
+        VALUES ('$nome_produto', '$data_cadastro',  '$descricao',  '$tipo','$peso', '$preco','$imagetmp')";
 
         if(mysqli_query($conexao, $sql)){
             echo "Cadastro feito";
