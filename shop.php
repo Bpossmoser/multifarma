@@ -84,7 +84,7 @@
           
         ?>
 
-        <div class="row mt-5">
+        <!-- <div class="row mt-5"> 
           <div class="col-md-12 text-center">
             <div class="site-block-27">
               <ul>
@@ -100,7 +100,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
 <hr>
     <footer class="site-footer">
