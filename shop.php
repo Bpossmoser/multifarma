@@ -69,30 +69,23 @@
 
         include("conexao.php");
         
-        $resultado = $db_handle -> run_query($conexao, "SELECT * FROM cadastro_produtos");
-        if (!empty($resultado)) {
-          //while ($row_prof = mysqli_fetch_array($resultado)) {
-            foreach($resultado as $key => $value){
-            echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
-            echo "<a href='produto.php?id=".$key['id']."'>";
-            //echo "<img src='data:image/jpeg;base64,' . base64_encode($foto[$key]['foto'])>";
-            echo "<img src='data:image/jpeg;base64,' . base64_encode($resultado[$key]['foto'])>";
-            echo "<h3 class='text-dark'><a href='#'>" . $key['nome_produto'] . "</a></h3>";
-            echo "<p class='price'>R$ " . $key['preco'] . "</p>";
-            echo "</div>";
-          }
-        }
+        $resultado = mysqli_query($conexao, "SELECT * FROM cadastro_produtos");
+          while ($row_prof = mysqli_fetch_array($resultado)) {
+            foreach($row_prof as $key => $value){
+               echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
+               echo "<a href='produto.php?id=".$row_prof['id']."'>";
+               echo '<img src="data:image/jpeg;base64," . base64_encode($row_prof['foto'])>';
+              echo "<h3 class='text-dark'><a href='#'>" . $row_prof['nome_produto'] . "</a></h3>";
+               echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
+               echo "</div>";
+            }
         ?>
         </div>
 
-        <!-- <div class="row">
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="produto.php"> <img src="images/product_01.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php">Bioderma</a></h3>
-            <p class="price"><del>95.00</del> &mdash; $55.00</p>
-          </div>
-        </div> -->
-
+        </div>
+        <?php 
+          }
+        ?>
 
         <div class="row mt-5">
           <div class="col-md-12 text-center">

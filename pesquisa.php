@@ -13,7 +13,7 @@ if ($Resu > 0) {
      <html>
      <body>
      <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="produto.php"> <img src="<?php $row_prof[''] ?>" alt="Image"></a>
+            <a href="produto.php"><img src="<?php $row_prof[''] ?>" alt="Image"></a>
             <h3 class="text-dark"><a href="produto.php"><?php $row_prof['nome_produto'] ?></a></h3>
             <p class="price"><?php $row_prof['preco'] ?></p>
           </div>    
