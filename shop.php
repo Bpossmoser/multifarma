@@ -64,20 +64,20 @@
 
         <?php
 
-        include("conexao.php");
+include("conexao.php");
 
-        $resultado = mysqli_query($conexao, "SELECT * FROM cadastro_produtos");
-        if (mysqli_num_rows($resultado) > 0) {
-          while ($row_prof = mysqli_fetch_assoc($resultado)) {
+$resultado = mysqli_query($conexao, "SELECT * FROM cadastro_produtos");
+if (mysqli_num_rows($resultado) > 0) {
+  while ($row_prof = mysqli_fetch_assoc($resultado)) {
 
-            echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
-            echo "<a href='produto.php?id=" . $row_prof['id'] . "'> <img src='images/product_03.png' alt='Image'></a>";
-            echo "<h3 class='text-dark'><a href='#'>" . $row_prof['nome_produto'] . "</a></h3>";
-            echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
-            echo "</div>";
-          }
-        }
-        ?>
+    echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
+    echo "<a href='produto.php?id=" . $row_prof['id'] . "'> <img src='images/product_03.png' alt='Image'></a>";
+    echo "<h3 class='text-dark'><a href='#'>" . $row_prof['nome_produto'] . "</a></h3>";
+    echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
+    echo "</div>";
+  }
+}
+?>
         </div>
 
         <!-- <div class="row">
