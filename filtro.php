@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <title>produto</title>
+  <title>Multifarma</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
@@ -27,76 +26,88 @@
 
   <div class="site-wrap">
 
-
- <?php 
+  <?php 
   require('nav.php');
-  require('conexao.php');
-
-  $resultado = mysqli_query($conexao, "SELECT * FROM cadastro_produtos WHERE id=" . $_GET['id']);
-        if (mysqli_num_rows($resultado) > 0) {
-          while ($row_prof = mysqli_fetch_assoc($resultado)) {
-          
- ?>
+  ?>
+  
 
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <a
-              href="shop.php">Loja</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">
-                </strong></div>
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Loja</strong></div>
         </div>
       </div>
     </div>
 
     <div class="site-section">
       <div class="container">
+
         <div class="row">
-          <div class="col-md-5 mr-auto">
-            <div class="border text-center">
-              <img src="images/product_07_large.png" alt="Image" class="img-fluid p-5">
+          <div class="col-lg-6">
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Preço</h3>
+            <div id="slider-range" class="border-primary"></div>
+            <input type="text" name="filtro" id="amount" class="form-control border-0 pl-0 bg-white">
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Referência</h3>
+            <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+              <a class="dropdown-item" href="filtro.php" name="az" >Nome, A a Z</a>
+              <a class="dropdown-item" href="filtro1.php" name="za">Nome, Z a A</a>
             </div>
           </div>
-          <div class="col-md-6">
-            <h2 class="text-black"><?php echo $row_prof['nome_produto'].", ". $row_prof['peso'];?></h2>
-            <p><?php echo $row_prof['descricao'];?></p>
-            
+        </div>
+        
 
-            <p> <strong class="text-primary h4"><?php echo "R$ ".$row_prof['preco'] ?></strong></p>
-            <?php
-          }
+        <div class="row">
+
+        <?php
+
+        include("conexao.php");
+
+
+
+        
+        
+        $resultado = mysqli_query($conexao, "SELECT * FROM cadastro_produtos ORDER BY nome_produto");
+        if (mysqli_num_rows($resultado) > 0) {
+          while ($row_prof = mysqli_fetch_assoc($resultado)) {
+
+            echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
+           echo "<a href='produto.php?id=" . $row_prof['id'] . "'> <img src='images/product_03.png' alt='Image'></a>";
+            echo "<h3 class='text-dark'><a href='#'>" . $row_prof['nome_produto'] . "</a></h3>";
+           echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
+            echo "</div>";
+         }
         }
-            ?>
-            
-            
-            <div class="mb-5">
-              <div class="input-group mb-3" style="max-width: 220px;">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                </div>
-                <input type="text" class="form-control text-center" value="1" placeholder=""
-                  aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                </div>
-              </div>
+   
+        
+
+        
     
+
+        ?>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-12 text-center">
+            <div class="site-block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
             </div>
-            <?php
-            require('conexao.php');
-           
-            echo '<p><a href="carrinho.php" id="'.$row_prof['id'].'"class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Adicionar ao carrinho</a></p>';
-
-            ?>
-
-    
           </div>
         </div>
       </div>
     </div>
 
 <hr>
-
-
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -137,9 +148,12 @@
           </div>
 
         </div>
+      
       </div>
     </footer>
   </div>
+      </div>
+  
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
@@ -152,5 +166,4 @@
   <script src="js/main.js"></script>
 
 </body>
-
 </html>
