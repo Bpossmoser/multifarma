@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+
 	<title>Cadastre-se!</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,11 +49,35 @@
             }if(senha == senha2){
                 document.getElementById('Resul_Conf').style.color = "#198704";
                 document.getElementById('Resul_Conf').innerHTML = "Senhas estão Corretas!";
-	            btn.disabled = false;
-				btn.style.opacity = null;
+	            var valor = document.getElementById('senha').value.length;
+				if( valor > 7){
+	           	 	btn.disabled = false;
+					btn.style.opacity = null;
 	            }
-        }
+	            }
+		}
+		function Senha(){
+			var senha = document.getElementById('senha').value.length;
+			var btn = document.getElementById('Cadastre');
+			if( senha > 7){
+				document.getElementById("Senha").innerHTML="Senha Forte";
+				document.getElementById("Senha").style.color = "#198704";
+				btn.disabled = false;
+				btn.style.opacity = null;
+			}else{
+				document.getElementById("Senha").innerHTML="Senha Fraca";
+				document.getElementById("Senha").style.color = "#ed0707";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+
+			}if(senha < 1 ){
+				document.getElementById("Senha").innerHTML="";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+			}
+		}
 </script> 	
+
 </head>
 
 <body>
@@ -81,13 +104,13 @@
 
 				<div class="wrap-input100 validate-input">
 					<span class="label-input100">CPF:</span>
-					<input class="input100" type="text" name="cpf">
+					<input class="input100" type="text" name="cpf" id = "cpf" maxlength="14">
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Telefone:(ex.:DD-00000-0000)</span>
-					<input class="input100" pattern="^\d{2}-\d{5}-\d{4}$" type="tel" name="telefone" >
+					<span class="label-input100">Telefone:(ex.: (DD) 00000-0000)</span>
+					<input class="input100" type="tel" name="telefone" id="telefone" >
 					<span class="focus-input100"></span>
 				</div>
 
@@ -99,9 +122,11 @@
 
 				<div class="wrap-input100 validate-input" data-validate="password is required">
 					<span class="label-input100">Senha:</span>
-					<input class="input100" pattern="[a-zA-Z0-9]+" type="password" name="senha" id="senha">
-					<span class="focus-input100"></span>
+					<input class="input100" pattern="[a-zA-Z0-9]+" type="password" name="senha" id="senha" onkeyup="Senha();">
+					<span class="focus-input100"></span>	
 				</div>
+				<p id="Senha"></p>
+				<br>
 				<div class="wrap-input100 validate-input" data-validate="password is required">
 					<span class="label-input100">Confirme sua senha:</span>
 					<input class="input100" pattern="[a-zA-Z0-9]+" type="password" name="senha2" id="senha2"
@@ -162,6 +187,14 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
+</script>
+<script src="jquery-3.4.1.min.js"></script>
+<script src="jquery.mask.js"></script>
+<script>
+$(document).ready(function(){
+	$('#cpf').mask('000.000.000-00', {reverse: true});
+	$('#telefone').mask('(00) 00000-0000');
+});
 </script>
 
 </body>

@@ -47,13 +47,37 @@
 				btn.disabled = true;
 				btn.style.opacity = "0.5";
             }    
-            }if(senha == senha2){
-                document.getElementById('Resul_Conf').style.color = "#198704";
+            }if(senha == senha2 ){
+				document.getElementById('Resul_Conf').style.color = "#198704";
                 document.getElementById('Resul_Conf').innerHTML = "Senhas estão Corretas!";
-	            btn.disabled = false;
-				btn.style.opacity = null;
+				var valor = document.getElementById('senha').value.length;
+				if( valor > 7){
+	           	 	btn.disabled = false;
+					btn.style.opacity = null;
 	            }
-        }
+		}
+	}
+		function Senha(){
+			var senha = document.getElementById('senha').value.length;
+			var btn = document.getElementById('Cadastre');
+			if( senha > 7){
+				document.getElementById("Senha").innerHTML="Senha Forte";
+				document.getElementById("Senha").style.color = "#198704";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+			}else{
+				document.getElementById("Senha").innerHTML="Senha Fraca";
+				document.getElementById("Senha").style.color = "#ed0707";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+
+			}
+			if(senha < 1 ){
+				document.getElementById("Senha").innerHTML="";
+				btn.disabled = true;
+				btn.style.opacity = "0.5";
+			}
+		}
 </script>
 </head>
 <body>
@@ -87,70 +111,102 @@
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">CNPJ:</span>
-					<input class="input100" type="text" name="cnpj">
+					<input class="input100" type="text" name="cnpj" id="cnpj">
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">Inscrição Estadual:</span>
-					<input class="input100" type="text" name="inscricao_est" >
+					<input class="input100" type="text" name="inscricao_est" id="est" >
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">Inscrição Municipal:</span>
 					<input class="input100" type="text" name="inscricao_mun" >
 					<span class="focus-input100"></span>
 				</div>
 
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">logradouro:</span>
 					<input class="input100" type="text" name="logradouro" >
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">número local:</span>
 					<input class="input100" type="text" name="num_local" >
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">Bairro:</span>
 					<input class="input100" type="text" name="bairro" >
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">Complemento:</span>
 					<input class="input100" type="text" name="complemento" >
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">cep:</span>
 					<input class="input100" type="text" name="cep" >
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+			<div class="container justify-content-between ">
+			<div class="d-flex flex-row ">	
+				<div class="wrap-input100 validate-input " >
 					<span class="label-input100">cidade:</span>
 					<input class="input100" type="text" name="cidade" >
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">uf:</span>
-					<input class="input100" type="text" name="uf" >
-					<span class="focus-input100"></span>
-				</div>
+				<div class="Select">
+					<span class="label-input">Unidade Federativa:</span>
+					<select name="Seleciona seu Estado">
+						<option value="AC">Acre</option>
+						<option value="AL">Alagoas</option>
+						<option value="AP">Amapá</option>
+						<option value="AM">Amazonas</option>
+						<option value="BA">Bahia</option>
+						<option value="CE">Ceará</option>
+						<option value="DF">Distrito Federal</option>
+						<option value="ES">Espírito Santo</option>
+						<option value="GO">Goiás</option>
+						<option value="MA">Maranhão</option>
+						<option value="MT">Mato Grosso</option>
+						<option value="MS">Mato Grosso do Sul</option>
+						<option value="MG">Minas Gerais</option>
+						<option value="PA">Pará</option>
+						<option value="PB">Paraíba</option>
+						<option value="PR">Paraná</option>
+						<option value="PE">Pernambuco</option>
+						<option value="PI">Piauí</option>
+						<option value="RJ">Rio de Janeiro</option>
+						<option value="RN">Rio Grande do Norte</option>
+						<option value="RS">Rio Grande do Sul</option>
+						<option value="RO">Rondônia</option>
+						<option value="RR">Roraima</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="SP">São Paulo</option>
+						<option value="SE">Sergipe</option>
+						<option value="TO">Tocantins</option>
+					</select>
+				</div>	
+			</div>
+			</div>
+			<br>	
 				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Telefone:(ex.:DD-00000-0000)</span>
-					<input class="input100" pattern="^\d{2}-\d{5}-\d{4}$" type="tel" name="telefone" >
+					<span class="label-input100">Telefone:(ex.: (DD) 00000-0000)</span>
+					<input class="input100"  type="tel" name="telefone" id = "telefone">
 					<span class="focus-input100"></span>
 				</div>
-
 				<div class="wrap-input100 validate-input" data-validate = "password is required">
 					<span class="label-input100">Senha:</span>
 					<input class="input100"  pattern="[a-zA-Z0-9]+" type="password" name="senha"
-					id = "senha" >
+					id = "senha" onkeyup= "Senha();" >
 					<span class="focus-input100"></span>
 				</div>
-				
+				<p id="Senha"></p>
+				<br>
 				<div class="wrap-input100 validate-input" data-validate="password is required">
 					<span class="label-input100">Confirme sua senha:</span>
 					<input class="input100" pattern="[a-zA-Z0-9]+" type="password" name="senha2" id="senha2"
@@ -213,8 +269,17 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
-</script>
 
+</script>
+<script src="jquery-3.4.1.min.js"></script>
+<script src="jquery.mask.js"></script>
+<script>
+$(document).ready(function(){
+	$('#cnpj').mask('00.000.000/0000-00', {reverse: true});
+	$('#est').mask('000.000.000.000', {reverse: true});
+	$('#telefone').mask('(00) 00000-0000');
+});
+</script>
 </body>
 </html>
 
