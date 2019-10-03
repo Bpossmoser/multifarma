@@ -20,7 +20,7 @@
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">Lojas</a></li>
                 <li><a href="shop.php">Produtos</a></li>
               
@@ -42,8 +42,17 @@
           }
         
             ?>  </a>
+            <?php
+            if(isset( $_SESSION['nome'])){
+           
+            echo '<a href="index.php"><i class="fas fa-times"></i>';
+               unset($_SESSION['email']);
+               unset($_SESSION['senha']);
+               unset($_SESSION['nome']);
+            }
+            ?>
             <a  class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="cart.html" class="icons-btn d-inline-block bag">
+            <a href="carrinho.php" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
               <span class="number">2</span>
             </a>

@@ -44,42 +44,24 @@
         </div>
 
         <div class="row">
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-       
-            <a href="farmacia1.html"> <img src="images/cor1.jpg" alt="Image"></a>
-            <h3 class="text-dark"><a href="farmacia1.html">Farmácia1</a></h3>
-            
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="farmacia2.html"> <img src="images/cor1.jpg" alt="Image"></a>
-            <h3 class="text-dark"><a href="farmacia2.html">Farmácia2</a></h3>
-            
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="farmacia3.html"> <img src="images/cor1.jpg" alt="Image"></a>
-            <h3 class="text-dark"><a href="farmacia3.html">Farmácia3</a></h3>
-           
-          </div>
 
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+        <?php
 
-            <a href="farmacia4.html"> <img src="images/cor1.jpg" alt="Image"></a>
-            <h3 class="text-dark"><a href="farmacia4.html">Farmácia4</a></h3>
-       
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="farmacia5.html"> <img src="images/cor1.jpg" alt="Image"></a>
-            <h3 class="text-dark"><a href="farmacia5.html">Farmácia5</a></h3>
+        include("conexao.php");
+
+        $resultado = mysqli_query($conexao, "SELECT * FROM cadfarmacia");
+        if (mysqli_num_rows($resultado) > 0) {
+          while ($row_prof = mysqli_fetch_assoc($resultado)) {
+
+            echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
+            echo "<a href='farmacia.php?id=" . $row_prof['id'] . "'> <img src='images/cor1.jpg' alt='Image'></a>";
+            echo "<h3 class='text-dark'><a href='farmacia.php'>" . $row_prof['fantasia'] . "</a></h3>";
+            echo "</div>";
+          }
+        }
+        ?>
+        </div>
         
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            
-            <a href="farmacia6.html"> <img src="images/cor1.jpg" alt="Image"></a>
-            <h3 class="text-dark"><a href="farmacia6.html">Farmácia6</a></h3>
-            
-          </div>
-        </div>
-        </div>
         <hr>
     <footer class="site-footer">
       <div class="container">
@@ -87,29 +69,24 @@
           <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 
             <div class="block-7">
-              <h3 class="footer-heading mb-4">About Us</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quae reiciendis distinctio voluptates
-                sed dolorum excepturi iure eaque, aut unde.</p>
+              <h3 class="footer-heading mb-4">Sobre Nós</h3>
+              <p>A multifarma é uma empresa voltada para as compras virtuais de produtos farmacêuticos, oferecendo uma plataforma com os produtos e preços disponibilizados por cada farmácia, podendo fazer pedidos e receber o produto na residência.
+            Os pedidos podem ser efetuados  através de diversas plataformas, como em celulares, tablets, notebooks entre outros.</p>
             </div>
 
           </div>
-          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
-            <h3 class="footer-heading mb-4">Quick Links</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Supplements</a></li>
-              <li><a href="#">Vitamins</a></li>
-              <li><a href="#">Diet &amp; Nutrition</a></li>
-              <li><a href="#">Tea &amp; Coffee</a></li>
-            </ul>
-          </div>
+
+          <div class="col-md-12 col-lg-6 ">
+         </div>
+         
 
           <div class="col-md-6 col-lg-3">
             <div class="block-5 mb-5">
-              <h3 class="footer-heading mb-4">Contact Info</h3>
+              <h3 class="footer-heading mb-4">Contate-nos</h3>
               <ul class="list-unstyled">
-                <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                <li class="email">emailaddress@domain.com</li>
+              <li class="address">Km 228, Lote 2A, BR-364 - Zona Rural, Cacoal-RO, 76960-970</li>
+                <li class="phone"><a href="tel://23923929210">+55 (69) 3443-2445</a></li>
+                <li class="email">multifarma7@gmail.com</li>
               </ul>
             </div>
 
@@ -121,11 +98,8 @@
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"
-                class="text-primary">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+              <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados Multifarma.
+                          </p>
           </div>
 
         </div>
