@@ -66,7 +66,7 @@
 
 include("conexao.php");
 
-$pesquisa=$_POST['pesquisar'];
+$pesquisa=$_GET['pesquisar'];
 
 $resultado = mysqli_query($conexao,"SELECT * FROM cadastro_produtos WHERE nome_produto='$pesquisa' ");
 if (mysqli_num_rows($resultado) > 0) {

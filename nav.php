@@ -4,7 +4,7 @@
         
         <div class="container">
           <a  class="search-close js-search-close"><span class="icon-close2"></span></a>
-          <form action="pesquisa.php" method="post">
+          <form action="pesquisa.php" method="GET">
             <input type="text" name="pesquisar" class="form-control" placeholder="Pesquisar Produto">
           </form>
         </div>
