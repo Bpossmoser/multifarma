@@ -7,14 +7,11 @@
     $tipo = $_POST['tipo'];
     $peso = $_POST['peso'];
     $preco = $_POST['preco'];
-    //$foto= $_POST['foto'];
 
-   // $handle = fopen( $foto, 'r' );
-    //$conteudo = fread( $handle, filesize($foto));
-    //fclose( $fd );
-    //$codificado = base64_encode ($conteudos) ;
-   
+    $imagetmp = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+    //$imagetmp = $_FILES['foto']['tmp_name'];
 
+<<<<<<< HEAD
     $sql = "INSERT INTO cadastro_produtos (nome_produto, datac, descricao, tipo, peso, preco) 
     VALUES ('$nome_produto', '$data_cadastro',  '$descricao',  '$tipo','$peso', '$preco')";
 
@@ -26,6 +23,17 @@
         echo "Error: ".$sql.mysqli_error($conexao);
     }
     
+=======
+        $sql = "INSERT INTO cadastro_produtos (nome_produto, datac, descricao, tipo, peso, preco, foto) 
+        VALUES ('$nome_produto', '$data_cadastro',  '$descricao',  '$tipo','$peso', '$preco', '$imagetmp')";
+
+        if(mysqli_query($conexao, $sql)){
+            echo "Cadastro feito";
+        }
+        else {
+            echo "Error: ".$sql.mysqli_error($conexao);
+        }
+>>>>>>> d565c3c01fefda6b87d5c5ae43d236315159aa9d
     mysqli_close($conexao);
     
     ?>

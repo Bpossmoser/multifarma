@@ -133,7 +133,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-lg-6 mb-5">
+          <div class="col-md-4 col-lg-4 mb-5">
     
             <div class="block-38 text-center">
               <div class="block-38-img">
@@ -146,7 +146,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-6 mb-5">
+          <div class="col-md-4 col-lg-4 mb-5">
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
@@ -157,7 +157,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-6 mb-5">
+          <div class="col-md-4 col-lg-4 mb-5">
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
@@ -172,7 +172,7 @@
             <div class="block-38 text-center">
               <div class="block-38-img">
                 <div class="block-38-header">
-                  <img src="images/barbara.jpg.jpg" alt="Image placeholder" class="mb-4">
+                  <img src="images/gilberto.jpeg" alt="Image placeholder" class="mb-4">
                   <h3 class="block-38-heading h4">Gilberto Rocha</h3>
                   <p class="block-38-subheading">CFO</p>
                 </div>
@@ -229,7 +229,6 @@
             <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
               <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados Multifarma.
             </p>
             </p>
