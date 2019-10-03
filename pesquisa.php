@@ -34,7 +34,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Início</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Loja</strong></div>
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Loja</strong></div>
         </div>
       </div>
     </div>
@@ -49,15 +49,12 @@
             <input type="text" name="filtro" id="amount" class="form-control border-0 pl-0 bg-white">
           </div>
           <div class="col-lg-6">
-            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar po Referência</h3>
+            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Referência</h3>
             <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
               <a class="dropdown-item" href="#">Relevância</a>
               <a class="dropdown-item" href="#">Nome, A to Z</a>
               <a class="dropdown-item" href="#">Nome, Z to A</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Preço, baixo para alto</a>
-              <a class="dropdown-item" href="#">Preço, maior para menor</a>
             </div>
           </div>
         </div>
@@ -69,7 +66,7 @@
 
 include("conexao.php");
 
-$pesquisa=$_POST['pesquisa'];
+$pesquisa=$_POST['pesquisar'];
 
 $sqli = mysqli_query($conexao,"SELECT * FROM produtos WHERE LIMIT '%$pesquisa%' 5 '");
 $row_prof = mysqli_fetch_assoc($sqli);
@@ -96,6 +93,7 @@ else{
 
 
 ?>
+        </div>
 
 <div class="row mt-5">
           <div class="col-md-12 text-center">
