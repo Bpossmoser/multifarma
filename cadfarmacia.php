@@ -43,7 +43,8 @@ $sql="INSERT INTO cadfarmacia (razao,fantasia,email,cnpj,inscricao_est,inscricao
 
 
 if(mysqli_query($conexao,$sql)){
-    echo "Cadastro feito";
+    echo "Cadastro feito <br>";
+    echo "<a href='cadas_farmacia.php'>Voltar</a>";
    //header ('location:pagina_inicial.html');
 }
 else {

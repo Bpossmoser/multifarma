@@ -17,7 +17,8 @@
     VALUES ('$nome_produto', '$data_cadastro',  '$descricao',  '$tipo','$peso', '$preco', '$imagetmp')";
 
         if(mysqli_query($conexao, $sql)){
-            echo "Cadastro feito";
+            echo "Cadastro feito <br>";
+            echo "<a href='cadastro_produto.html'>Voltar</a ";
         }
         else {
             echo "Error: ".$sql.mysqli_error($conexao);
