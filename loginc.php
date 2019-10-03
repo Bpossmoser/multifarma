@@ -13,19 +13,22 @@ $senha = hash('sha256', $_POST['senha']);
 if ($conexao == true)
 {
     echo "conectou";
-    $resultado_comando = mysqli_query($conexao,"SELECT email, senha FROM cadastro_cliente WHERE email = '$email' AND senha = '$senha'; ");
+    $resultado_comando = mysqli_query($conexao,"SELECT email, senha, nome FROM cadastro_cliente WHERE email = '$email' AND senha = '$senha'; ");
 
     $res = mysqli_num_rows($resultado_comando);
+    $nome= mysqli_fetch_assoc($resultado_comando);
     if ($res> 0) {
 
         $_SESSION['email'] = $email;
         $_SESSION['senha'] = $senha;
+        $_SESSION['nome'] = $nome['nome'];
         header('location:shop.php');
         }
     else {
 
          unset ($_SESSION['email']);
          unset ($_SESSION['senha']);
+         unset ($_SESSION['nome']);
          header('location:login_usuario.html');
    
     }

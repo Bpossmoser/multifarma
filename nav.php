@@ -1,0 +1,55 @@
+<div class="site-navbar py-2">
+
+      <div class="search-wrap">
+        
+        <div class="container">
+          <a  class="search-close js-search-close"><span class="icon-close2"></span></a>
+          <form action="#" method="post">
+            <input type="text" class="form-control" placeholder="Pesquisar Produto">
+          </form>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo">
+              <div class="site-logo">
+              
+                </div>
+          </div>
+          <div class="main-nav d-none d-lg-block">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="about.php">Lojas</a></li>
+                <li><a href="shop.php">Produtos</a></li>
+              
+                <li class="has-children"><a>Login</a>
+                  <ul class="dropdown">
+                    <li><a href="login_usuario.html">Entrar</a></li>
+                    <li><a href="login_farmacia.html">Farmácia</a></li>
+                  </li>
+                  </ul>
+              </ul>
+            </nav>
+          </div>
+          <div class="icons">
+            
+          <a ><i class="fas fa-user"></i><?php   
+          session_start();
+          if(isset( $_SESSION['nome'])){
+            echo"Olá, " . $_SESSION['nome'];
+          }
+        
+            ?>  </a>
+            <a  class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
+            <a href="cart.html" class="icons-btn d-inline-block bag">
+              <span class="icon-shopping-bag"></span>
+              <span class="number">2</span>
+            </a>
+            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
+                class="icon-menu"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
