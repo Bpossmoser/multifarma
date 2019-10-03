@@ -4,8 +4,8 @@
         
         <div class="container">
           <a  class="search-close js-search-close"><span class="icon-close2"></span></a>
-          <form action="#" method="post">
-            <input type="text" id="pesquisar" class="form-control" placeholder="Pesquisar Produto">
+          <form action="pesquisa.php" method="post">
+            <input type="text" name="pesquisar" class="form-control" placeholder="Pesquisar Produto">
           </form>
         </div>
       </div>
