@@ -43,12 +43,18 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
               <div class="site-logo">
-              
+              <h2>Multifarma</h2>
                 </div>
           </div>
           <div class="main-nav d-none d-lg-block">
-            <a>Multi Farma</a>
-
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <ul class="site-menu js-clone-nav d-none d-lg-block">
+                <li><a href="cadastro_produto.html">Cadastrar Produtos</a></li>
+                <li><a href="#">Pedidos</a></li>
+                <li><a href="#">Alterar Perfil</a></li>
+                  </ul>
+              </ul>
+            </nav>
           </div>
           <div class="icons">
             
@@ -81,55 +87,11 @@
     </div>
     <div class="site-blocks-cover" style="background-image: url('images/fachada.jpg');"></div>
 
-    <div class="container">
-        <div class="row align-items-stretch">
-          <div class="col-lg-3 mb-5 mb-lg-0">
-            <a href="#" class="banner-1 h-20 d-flex">
-            <div class="banner-1-inner ml-auto  align-self-center">
-                <h2>Perfil</h2>
-                
-            </div>
-            </a>
-          
-          </div>
-            
-
-          <div class="col-lg-3 mb-5 mb-lg-0">
-            <a href="#" class="banner-1 h-20 d-flex">
-              <div class="banner-1-inner ml-auto  align-self-center">
-                <h2>Estoque</h2>
-        
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 mb-5 mb-lg-0">
-            <a href="#" class="banner-1 h-20 d-flex" >
-              <div class="banner-1-inner ml-auto  align-self-center">
-                <h2>Pedido</h2>
-        
-              </div>
-            </a>
-          </div>
-          
-            <div class="col-lg-3 mb-5 mb-lg-0">
-            <a href="#" class="banner-1 h-20 d-flex" >
-              <div class="banner-1-inner ml-auto  align-self-center">
-                <h2>Cadastro de Produtos</h2>
-        
-              </div>
-            </a>
-          </div>
-          </div>
-        </div>
-      </div>
-    
-
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="title-section text-center col-12">
-            <h2 class="text-uppercase">Farmácia</h2>
+            <h2 class="text-uppercase">Estoque</h2>
           </div>
         </div>
 
@@ -173,46 +135,7 @@
     </div>
 
     
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="title-section text-center col-12">
-            <h2 class="text-uppercase">Novos Produtos</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 block-3 products-wrap">
-            <div class="nonloop-block-3 owl-carousel">
-
-              <div class="text-center item mb-4">
-                <a href="produto.php"> <img src="images/product_03.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="produto.php">Umcka Cold Care</a></h3>
-                <p class="price">$120.00</p>
-              </div>
-
-              <div class="text-center item mb-4">
-                <a href="produto.php"> <img src="images/product_01.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="produto.php">Umcka Cold Care</a></h3>
-                <p class="price">$120.00</p>
-              </div>
-
-              <div class="text-center item mb-4">
-                <a href="produto.php"> <img src="images/product_02.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="produto.php">Umcka Cold Care</a></h3>
-                <p class="price">$120.00</p>
-              </div>
-
-              <div class="text-center item mb-4">
-                <a href="produto.php"> <img src="images/product_04.png" alt="Image"></a>
-                <h3 class="text-dark"><a href="produto.php">Umcka Cold Care</a></h3>
-                <p class="price">$120.00</p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <footer class="site-footer">
       <div class="container">
