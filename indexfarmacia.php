@@ -81,9 +81,49 @@
     </div>
     <div class="site-blocks-cover" style="background-image: url('images/fachada.jpg');"></div>
 
-   <div class="blocks col-sm-5">
-     <a>Perfil</a>
-   </div>
+    <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-3 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-20 d-flex">
+            <div class="banner-1-inner ml-auto  align-self-center">
+                <h2>Perfil</h2>
+                
+            </div>
+            </a>
+          
+          </div>
+            
+
+          <div class="col-lg-3 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-20 d-flex">
+              <div class="banner-1-inner ml-auto  align-self-center">
+                <h2>Estoque</h2>
+        
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-3 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-20 d-flex" >
+              <div class="banner-1-inner ml-auto  align-self-center">
+                <h2>Pedido</h2>
+        
+              </div>
+            </a>
+          </div>
+          
+            <div class="col-lg-3 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-20 d-flex" >
+              <div class="banner-1-inner ml-auto  align-self-center">
+                <h2>Cadastro de Produtos</h2>
+        
+              </div>
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    
 
     <div class="site-section">
       <div class="container">

@@ -477,7 +477,7 @@ a {
   background-position: center center;
   position: relative; }
   .site-blocks-cover, .site-blocks-cover > .container > .row {
-    min-height: 700px;
+    min-height: 50px;
     height: calc(100vh); }
   .site-blocks-cover.inner-page, .site-blocks-cover.inner-page .row {
     min-height: 400px;
