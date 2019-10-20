@@ -35,7 +35,7 @@
           </div>
           <div class="icons">
             
-          <a ><i class="fas fa-user"></i><?php   
+          <a  href="login_usuario.html" ><i class="fas fa-user"></i><?php   
           session_start();
           if(isset( $_SESSION['nome'])){
             echo"Olá, " . $_SESSION['nome'];
