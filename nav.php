@@ -23,13 +23,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">Lojas</a></li>
                 <li><a href="shop.php">Produtos</a></li>
-              
-                <li class="has-children"><a>Login</a>
-                  <ul class="dropdown">
-                    <li><a href="login_usuario.html">Entrar</a></li>
-                    <li><a href="login_farmacia.html">Farmácia</a></li>
-                  </li>
-                  </ul>
+                <li><a href="login_farmacia.html">Login Farmácia</a></li>
               </ul>
             </nav>
           </div>
