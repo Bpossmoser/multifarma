@@ -64,19 +64,19 @@
 
         <?php
 
-        include("conexao.php");
-        
-        $resultado = mysqli_query($conexao, "SELECT * FROM cadastro_produtos");
-          while ($row_prof = mysqli_fetch_array($resultado)) {
+  require_once "./functions/product.php";
+  $pdoConexao = require_once "./connection.php";
+  $Produtos  = getProducts($pdoConexao);
+  foreach($Produtos as $Produto){      
           
                echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
-               echo "<a href='produto.php?id=".$row_prof['id']."'>";
-               echo '<img src="data:image/png;base64,'. base64_encode($row_prof['foto']).'" width = 250 heigth = 250 />';
-               echo "<h3 class='text-dark'><a href='#'>" . $row_prof['nome_produto'] . "</a></h3>";
-               echo "<p class='price'>R$ " . $row_prof['preco'] . "</p>";
+               echo "<a href='produto.php?id=".$Produto['id']."'>";
+               echo '<img src="data:image/png;base64,'. base64_encode($Produto['foto']).'" width = 250 heigth = 250 />';
+               echo "<h3 class='text-dark'><a href='#'>" . $Produto['nome_produto'] . "</a></h3>";
+               echo "<p class='price'>R$ " . $Produto['preco'] . "</p>";
                echo "</div>";
-            }
-        ?>
+           
+  }?>
         </div>
 
         </div>

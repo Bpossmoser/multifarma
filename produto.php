@@ -30,12 +30,11 @@
 
  <?php 
   require('nav.php');
-  require('conexao.php');
-
-  $resultado = mysqli_query($conexao, "SELECT * FROM cadastro_produtos WHERE id=" . $_GET['id']);
-        if (mysqli_num_rows($resultado) > 0) {
-          while ($row_prof = mysqli_fetch_assoc($resultado)) {
-          
+   require_once "./functions/product.php";
+   $pdoConexao = require_once "./connection.php";
+   $id = $_GET['id'];
+   $Produto = getProductsByIds($pdoConexao, $id);
+   foreach($Produto as $Prod){
  ?>
 
     <div class="bg-light py-3">
@@ -47,26 +46,24 @@
         </div>
       </div>
     </div>
-
     <div class="site-section">
       <div class="container">
         <div class="row">
           <div class="col-md-5 mr-auto">
+            <!-- <form action="carrinho.php?acao=add&id=<?php echo $Prod['id']?>" method="post"></form> -->
             <div class="border text-center">
-              <img src="<?php echo 'data:image/png;base64,'. base64_encode($row_prof['foto']).'"';?>" alt="Image" class="img-fluid p-5">
+              <img src="<?php echo 'data:image/png;base64,'. base64_encode($Prod['foto']).'';?>" alt="Image" class="img-fluid p-5">
             </div>
           </div>
           <div class="col-md-6">
-            <h2 class="text-black"><?php echo $row_prof['nome_produto'].", ". $row_prof['peso'];?></h2>
-            <p><?php echo $row_prof['descricao'];?></p>
+            <h2 class="text-black"><?php echo $Prod['nome_produto'].", ". $Prod['peso'];?></h2>
+            <p><?php echo $Prod['descricao'];?></p>
             
 
-            <p> <strong class="text-primary h4"><?php echo "R$ ".$row_prof['preco'] ?></strong></p>
+            <p> <strong class="text-primary h4"><?php echo "R$ ".$Prod['preco'] ?></strong></p>
             <?php
           }
-        }
             ?>
-            
             
             <div class="mb-5">
               <div class="input-group mb-3" style="max-width: 220px;">
@@ -81,14 +78,7 @@
               </div>
     
             </div>
-            <?php
-            require('conexao.php');
-           
-            echo '<p><a href="carrinho.php" id="'.$row_prof['id'].'"class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Adicionar ao carrinho</a></p>';
-
-            ?>
-
-    
+            <a href="carrinho.php?acao=add&id=<?php echo $Prod['id'] ?>" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Adicionar ao carrinho</a>
           </div>
         </div>
       </div>

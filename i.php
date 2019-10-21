@@ -78,7 +78,7 @@
               <table class="table table-bordered">
                 <thead>
                   
-                
+                  
                   <tr>
                     <th class="product-thumbnail">Imagem</th>
                     <th class="product-name">Produto</th>
@@ -116,13 +116,11 @@
                       <a href="carrinho.php?acao=del&id=<?php echo $result['id']?>">Remover Produto</a>
                     </td>
                 <?php }?>
-                </table>
             </div>
             <div class="row">
-              <input type="submit" value="Atualizar Campos">
+              <input type="submit" value="Atuaizar Campos">
               <div class="col-md-6">
                 </div>
-                </tbody>
           <br><br><br><br>
           <div class="col-md-6 pl-5">
             <div class="row justify-content-end">

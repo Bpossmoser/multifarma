@@ -1060,9 +1060,9 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 20px;
+  padding: 10px;
   display: block;
-  min-height: 300px;
+  min-height: 100px;
   border-radius: 4px;
   -webkit-box-shadow: 0 10px 30px -15px #f7070793;
   box-shadow: 0 10px 30px -15px #f7070793;
@@ -1070,7 +1070,7 @@ a {
   -o-transition: .3s all ease;
   transition: .3s all ease;
   position: relative;
-  top: 0; }
+  top: 5px; }
   .banner-1:hover {
     top: -10px;
     -webkit-box-shadow: 0 10px 30px -15px #110ecead;
