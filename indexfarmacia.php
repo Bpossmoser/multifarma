@@ -57,6 +57,9 @@
             </nav>
           </div>
           <div class="icons">
+
+          
+      <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i></a>
             
           <a ><i class="fas fa-user"></i><?php   
           session_start();
