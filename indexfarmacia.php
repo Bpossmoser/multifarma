@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <title>Pharma &mdash; Colorlib Template</title>
+  <title>Farmácia</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -50,8 +50,9 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li><a href="cadastro_produto.html">Cadastrar Produtos</a></li>
-                <li><a href="#">Pedidos</a></li>
+                <li><a href="pedidos.php">Pedidos</a></li>
                 <li><a href="#">Alterar Perfil</a></li>
+                <li><a href="indexfarmacia.php">Estoque</a></li>
                   </ul>
               </ul>
             </nav>
@@ -59,28 +60,25 @@
           <div class="icons">
 
           
-      <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i></a>
+      
             
-          <a ><i class="fas fa-user"></i><?php   
+          <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php   
           session_start();
-          if(isset( $_SESSION['nome'])){
-            echo"Olá, " . $_SESSION['nome'];
+          if(isset( $_SESSION['fantasia'])){
+            echo"Olá, " . $_SESSION['fantasia'];
           }
         
             ?>  </a>
             <?php
-            if(isset( $_SESSION['nome'])){
+            if(isset( $_SESSION['fantasia'])){
            
             echo '<a href="index.php"><i class="fas fa-times"></i>';
                unset($_SESSION['email']);
                unset($_SESSION['senha']);
-               unset($_SESSION['nome']);
+               unset($_SESSION['fantasia']);
             }
             ?>
-            <a  class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-            <a href="carrinho.php" class="icons-btn d-inline-block bag">
-              <span class="icon-shopping-bag"></span>
-              <span class="number">2</span>
+            
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
                 class="icon-menu"></span></a>
@@ -137,7 +135,7 @@
       </div>
     </div>
 
-    
+    <hr>
     
 
     <footer class="site-footer">

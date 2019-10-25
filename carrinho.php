@@ -119,7 +119,8 @@
                 </table>
             </div>
             <div class="row">
-              <input type="submit" value="Atualizar Campos">
+            <button class="buy-now btn btn-sm height-auto px-4 py-3" onclick="window.location='shop.php.html'">Continuar Comprando</a>
+                  </button>
               <div class="col-md-6">
                 </div>
                 </tbody>
