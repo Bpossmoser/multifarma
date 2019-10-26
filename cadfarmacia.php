@@ -19,6 +19,11 @@ $query_select = "SELECT email FROM cadfarmacia WHERE email = '$email'";
 $select = mysqli_query($conexao,$query_select);
 $array = mysqli_fetch_array($select);
 $logarray = $array['email'];
+$imagetmp= addslashes (file_get_contents($_FILES['foto']['tmp_name']));
+    //$foto= $_POST['foto'];
+
+    $imagetmp = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+    //$imagetmp = $_FILES['foto']['tmp_name'];
 
 $senha = hash('sha256', $_POST['senha']);
 $senha2 = hash('sha256', $_POST['senha2']);

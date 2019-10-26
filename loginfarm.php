@@ -19,7 +19,7 @@ session_start();
             
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-            header('location:pagina_inicial.php');
+            header('location:indexfarmacia.php');
             }
         else {
     

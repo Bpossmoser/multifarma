@@ -213,6 +213,11 @@
 					 onkeyup="ValidarSenha();">
 					<span class="focus-input100"></span>
 				</div>
+				<div class="col-md-12 my-3">
+						<div class="wrap-input100 validate-input" data-validate="Campo Obrigatório">
+						<input type="file" name="foto" placeholder="Imagem">
+				</div>
+				</div>
 				<br>
 				<p id="Resul_Conf"></p>
 

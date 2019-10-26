@@ -67,7 +67,7 @@
   require_once "./functions/product.php";
   $pdoConexao = require_once "./connection.php";
   $Produtos  = getProducts($pdoConexao);
-  foreach($Produtos as $Produto){      
+  foreach($Produtos as $Produto):     
           
                echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
                echo "<a href='produto.php?id=".$Produto['id']."'>";
@@ -76,7 +76,7 @@
                echo "<p class='price'>R$ " . $Produto['preco'] . "</p>";
                echo "</div>";
            
-  }?>
+  endforeach?>
         </div>
 
         </div>
