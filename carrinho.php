@@ -29,10 +29,11 @@
 
   <?php 
   require('nav.php');
+  session_start();
 	require_once "functions/product.php";
 	require_once "functions/cart.php";
  
-	$pdoConnection = require_once "connection.php";
+	$pdoConnection = require_once "./connection.php";
 
 	if(isset($_GET['acao']) && in_array($_GET['acao'], array('add', 'del', 'up'))) {
 		
@@ -165,7 +166,7 @@
         </div>
       </div>
     </div>
-                <?php } ?>
+  <?php } ?>
 <hr>
     <footer class="site-footer">
       <div class="container">
