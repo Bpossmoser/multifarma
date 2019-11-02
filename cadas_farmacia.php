@@ -83,7 +83,7 @@
 <body>
 
 
-     <form action="cadfarmacia.php" method="POST">
+     <form action="cadfarmacia.php" method="POST" enctype="multipart/form-data" >
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
@@ -161,7 +161,7 @@
 				</div>
 				<div class="Select">
 					<span class="label-input">Unidade Federativa:</span>
-					<select name="Seleciona seu Estado">
+					<select name="uf">
 						<option value="AC">Acre</option>
 						<option value="AL">Alagoas</option>
 						<option value="AP">Amapá</option>

@@ -120,8 +120,8 @@
                 </table>
             </div>
             <div class="row">
-            <button class="buy-now btn btn-sm height-auto px-4 py-3" onclick="window.location='shop.php.html'">Continuar Comprando</a>
-                  </button>
+            <a class="buy-now btn btn-sm px-4" onclick="window.location='shop.php'">Continuar Comprando</a>
+            </a>
               <div class="col-md-6">
                 </div>
                 </tbody>
@@ -152,8 +152,8 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.html'">Terminar Revisão
-                  </button>
+                    <a class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.html'">Terminar Revisão
+                </a>
                   </div>
                 </div>
               </div>

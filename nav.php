@@ -1,5 +1,4 @@
 <div class="site-navbar py-2">
-
   <div class="search-wrap">
 
     <div class="container">
@@ -14,7 +13,6 @@
     <div class="d-flex align-items-center justify-content-between">
       <div class="logo">
         <div class="site-logo">
-
         </div>
       </div>
       <div class="main-nav d-none d-lg-block">
@@ -27,10 +25,8 @@
         </nav>
       </div>
       <div class="icons">
-
-      <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i></a>
-
-        <a href="login_usuario.html"><i class="fas fa-user"></i><?php
+      
+      <a href="login_usuario.html"><i class="fas fa-user  d-inline-block ml-3"></i><?php
              if (isset($_SESSION['nome'])) {
               echo "Olá, " . $_SESSION['nome'];
                }
@@ -45,10 +41,10 @@
           unset($_SESSION['nome']);
         }
         ?>
+      <a href="login_farmacia.html "><i class="fas fa-clinic-medical  d-inline-block ml-3"></i></a>
         <a class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
         <a href="carrinho.php" class="icons-btn d-inline-block bag">
           <span class="icon-shopping-bag"></span>
-          <span class="number">2</span>
         </a>
         <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
       </div>

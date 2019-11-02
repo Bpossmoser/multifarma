@@ -29,16 +29,6 @@
 
 <div class="site-navbar py-2">
 
-      <div class="search-wrap">
-        
-        <div class="container">
-          <a  class="search-close js-search-close"><span class="icon-close2"></span></a>
-          <form action="pesquisa.php" method="GET">
-            <input type="text" name="pesquisar" class="form-control" placeholder="Pesquisar Produto">
-          </form>
-        </div>
-      </div>
-
       <div class="container">
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">

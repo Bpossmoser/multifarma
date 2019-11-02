@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,8 +30,8 @@
   <div class="site-wrap">
 
   <?php 
-  require('nav.php');
-  ?>
+  include('nav.php');
+    ?> 
   
 
     <div class="bg-light py-3">
