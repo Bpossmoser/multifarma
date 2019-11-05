@@ -93,7 +93,11 @@
         </div>
       </div>
     </div>
-    <div class="site-blocks-cover" style="background-image: url('images/fachada.jpg');"></div>
+    <div class="site-blocks-cover">
+    <?php 
+     echo '<img class="site-blocks-cover" src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" />';
+    ?>
+    </div>
 
     <div class="site-section">
       <div class="container">

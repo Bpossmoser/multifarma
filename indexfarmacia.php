@@ -82,7 +82,7 @@
       </div>
     </div>
     <?php 
-     echo '<img src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" />';
+     echo '<img class="site-blocks-cover" src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" />';
     ?>
     <div class="site-section">
       <div class="container">
