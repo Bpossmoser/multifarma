@@ -1,6 +1,16 @@
+<?php 
+
+  require "./conexao.php";
+  $id = $_GET['id'];
+
+  $SelectImage ="SELECT * FROM cadfarmacia WHERE id = $id";
+  $GetImage = mysqli_query($conexao, $SelectImage);
+  $GetImageAssoc = mysqli_fetch_assoc($GetImage);  
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <title>Farmácia</title>
   <meta charset="utf-8">
@@ -40,7 +50,7 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li><a href="cadastro_produto.html">Cadastrar Produtos</a></li>
-                <li><a href="pedidos.php">Pedidos</a></li>
+                <li><a href="pedidos.php?id=<?php echo $id ?>">Pedidos</a></li>
                 <li><a href="#">Alterar Perfil</a></li>
                 <li><a href="indexfarmacia.php">Estoque</a></li>
                   </ul>
@@ -48,16 +58,10 @@
             </nav>
           </div>
           <div class="icons">
-
-          
-      
             
           <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php   
-          session_start();
-          if(isset( $_SESSION['fantasia'])){
+            $_SESSION['fantasia'] = $GetImageAssoc['fantasia'];
             echo"Olá, " . $_SESSION['fantasia'];
-          }
-        
             ?>  </a>
             <?php
             if(isset( $_SESSION['fantasia'])){
@@ -76,8 +80,9 @@
         </div>
       </div>
     </div>
-    <div class="site-blocks-cover" style="background-image: url('images/fachada.jpg');"></div>
-
+    <?php 
+     echo '<img src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" />';
+    ?>
     <div class="site-section">
       <div class="container">
         <div class="row">

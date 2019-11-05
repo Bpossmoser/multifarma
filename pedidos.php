@@ -1,3 +1,13 @@
+<?php 
+
+  require "./conexao.php";
+  $id = $_GET['id'];
+
+  $SelectImage ="SELECT * FROM cadfarmacia WHERE id = $id";
+  $GetImage = mysqli_query($conexao, $SelectImage);
+  $GetImageAssoc = mysqli_fetch_assoc($GetImage);  
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -58,16 +68,12 @@
               </ul>
             </nav>
           </div>
-          <div class="icons">
-
-          
-      
+          <div class="icons">  
             
           <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php   
-          session_start();
-          if(isset( $_SESSION['fantasia'])){
+            
+            $_SESSION['fantasia'] = $GetImageAssoc['fantasia'];
             echo"Olá, " . $_SESSION['fantasia'];
-          }
         
             ?>  </a>
             <?php
