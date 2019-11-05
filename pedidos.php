@@ -71,7 +71,7 @@
           <div class="icons">  
             
           <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php   
-            
+            session_start();
             $_SESSION['fantasia'] = $GetImageAssoc['fantasia'];
             echo"Olá, " . $_SESSION['fantasia'];
         
@@ -93,11 +93,11 @@
         </div>
       </div>
     </div>
-    <div class="site-blocks-cover">
+    <div id="ImagemFarmacia">
     <?php 
-     echo '<img class="site-blocks-cover" src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" />';
+     echo '<img src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" /width="100%" height="100%">';
     ?>
-    </div>
+  </div> 
 
     <div class="site-section">
       <div class="container">

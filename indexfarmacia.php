@@ -81,9 +81,11 @@
         </div>
       </div>
     </div>
+  <div id="ImagemFarmacia">
     <?php 
-     echo '<img class="site-blocks-cover" src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" />';
+     echo '<img src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" /width="100%" height="100%">';
     ?>
+  </div>  
     <div class="site-section">
       <div class="container">
         <div class="row">
