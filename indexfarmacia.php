@@ -59,7 +59,8 @@
           </div>
           <div class="icons">
             
-          <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php   
+          <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php
+            session_start();   
             $_SESSION['fantasia'] = $GetImageAssoc['fantasia'];
             echo"Olá, " . $_SESSION['fantasia'];
             ?>  </a>
