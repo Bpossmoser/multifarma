@@ -87,8 +87,11 @@
     ?>
   </div>  
     <?php
+    
+    require_once "./functions/product.php";
+    $pdoConexao = require_once "./connection.php";        
     $Produtos  = getProducts($pdoConexao);
-  foreach($Produtos as $Produto):
+    foreach($Produtos as $Produto):
     echo '<div class="site-blocks-cover" style="background-image: url("data:image/png;base64,'. base64_encode($Produto['foto']).'");"></div>';
 
     endforeach
