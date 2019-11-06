@@ -37,7 +37,7 @@ session_start();
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Início</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Loja</strong></div>
+          <div class="col-md-12 mb-0"><a href="InicioUser.php?id= <?php echo $GetUserAssoc['id'] ?>">Início</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Loja</strong></div>
         </div>
       </div>
     </div>

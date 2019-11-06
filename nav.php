@@ -1,3 +1,12 @@
+<?php
+
+  require "./conexao.php";
+  $id = $_GET['id'];
+  $SelectUser ="SELECT * FROM cadastro_cliente WHERE id = $id";
+  $GetUser = mysqli_query($conexao, $SelectUser);
+  $GetUserAssoc = mysqli_fetch_assoc($GetUser);  
+
+?>
 <div class="site-navbar py-2">
   <div class="search-wrap">
 
@@ -18,20 +27,20 @@
       <div class="main-nav d-none d-lg-block">
         <nav class="site-navigation text-right text-md-center" role="navigation">
           <ul class="site-menu js-clone-nav d-none d-lg-block">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="about.php">Lojas</a></li>
-            <li><a href="shop.php">Produtos</a></li>
+            <li><a href="InicioUser.php?id=<?php echo $GetUserAssoc['id']?>">Home</a></li>
+            <li><a href="about.php?id=<?php echo $GetUserAssoc['id']?>">Lojas</a></li>
+            <li><a href="shop.php?id=<?php echo $GetUserAssoc['id']?>">Produtos</a></li>
           </ul>
         </nav>
       </div>
       <div class="icons">
       
       <a href="login_usuario.html"><i class="fas fa-user  d-inline-block ml-3"></i><?php
-             if (isset($_SESSION['nome'])) {
-              echo "Olá, " . $_SESSION['nome'];
-               }
 
-              ?> </a>
+              $_SESSION['nome'] = $GetUserAssoc['nome'];
+              echo "Olá, " . $_SESSION['nome'];
+          
+      ?> </a>
         <?php
         if (isset($_SESSION['nome'])) {
 
