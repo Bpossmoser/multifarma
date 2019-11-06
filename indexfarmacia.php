@@ -85,17 +85,16 @@
     <?php 
      echo '<img src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" /width="100%" height="100%">';
     ?>
-  </div>  
-    <?php
-    
-    require_once "./functions/product.php";
-    $pdoConexao = require_once "./connection.php";        
-    $Produtos  = getProducts($pdoConexao);
-    foreach($Produtos as $Produto):
-    echo '<div class="site-blocks-cover" style="background-image: url("data:image/png;base64,'. base64_encode($Produto['foto']).'");"></div>';
+  </div> 
 
-    endforeach
-    ?>
+    <!-- // require_once "./functions/product.php";
+    // $pdoConexao = require_once "./connection.php";        
+    // $Produtos  = getProducts($pdoConexao);
+    
+    // foreach($Produtos as $Produto):
+    // echo '<div class="site-blocks-cover" style="background-image: url("data:image/png;base64,'. base64_encode($Produto['foto']).'");"></div>';
+
+    // endforeach; -->
 
     <div class="site-section">
       <div class="container">
