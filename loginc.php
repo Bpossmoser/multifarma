@@ -1,3 +1,4 @@
+
 <?php
 
 include("conexao.php");
@@ -9,6 +10,8 @@ $email = $_POST['email'];
 echo $email,"<br>";
 
 $senha = hash('sha256', $_POST['senha']);
+
+
 
 if ($conexao == true)
 {
@@ -31,7 +34,7 @@ if ($conexao == true)
          unset ($_SESSION['senha']);
          unset ($_SESSION['nome']);
          header('location:login_usuario.html');
-   
+         
     }
 }
 else{

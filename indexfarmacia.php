@@ -86,6 +86,14 @@
      echo '<img src="data:image/png;base64,'. base64_encode($GetImageAssoc['foto']).'" /width="100%" height="100%">';
     ?>
   </div>  
+    <?php
+    $Produtos  = getProducts($pdoConexao);
+  foreach($Produtos as $Produto):
+    echo '<div class="site-blocks-cover" style="background-image: url("data:image/png;base64,'. base64_encode($Produto['foto']).'");"></div>';
+
+    endforeach
+    ?>
+
     <div class="site-section">
       <div class="container">
         <div class="row">
