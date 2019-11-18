@@ -18,8 +18,8 @@ session_start();
             
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-            $id = $Associa['id'];
-            header("location:indexfarmacia.php?id=$id");
+            $_SESSION['idFarmacia'] = $Associa['id'];
+            header("location:indexfarmacia.php");
             }
         else {
     

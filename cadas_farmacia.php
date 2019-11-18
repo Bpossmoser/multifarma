@@ -126,10 +126,16 @@
 					<input class="input100" type="text" name="inscricao_mun" >
 					<span class="focus-input100"></span>
 				</div>
+				<div class="wrap-input100 validate-input" >
+					<span class="label-input100">cep:</span>
+					<input class="input100" type="text" name="cep" id="cep"
+					onblur="pesquisacep(this.value)">
+					<span class="focus-input100"></span>
+				</div>
 
 				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">logradouro:</span>
-					<input class="input100" type="text" name="logradouro" >
+					<input class="input100" type="text" name="logradouro" id="logradouro" >
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" >
@@ -139,7 +145,7 @@
 				</div>
 				<div class="wrap-input100 validate-input" >
 					<span class="label-input100">Bairro:</span>
-					<input class="input100" type="text" name="bairro" >
+					<input class="input100" type="text" name="bairro" id="bairro" >
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" >
@@ -147,21 +153,17 @@
 					<input class="input100" type="text" name="complemento" >
 					<span class="focus-input100"></span>
 				</div>
-				<div class="wrap-input100 validate-input" >
-					<span class="label-input100">cep:</span>
-					<input class="input100" type="text" name="cep" >
-					<span class="focus-input100"></span>
-				</div>
+				
 			<div class="container justify-content-between ">
 			<div class="d-flex flex-row ">	
 				<div class="wrap-input100 validate-input " >
 					<span class="label-input100">cidade:</span>
-					<input class="input100" type="text" name="cidade" >
+					<input class="input100" type="text" name="cidade" id="cidade">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="Select">
 					<span class="label-input">Unidade Federativa:</span>
-					<select name="uf">
+					<select name="uf" id="uf">
 						<option value="AC">Acre</option>
 						<option value="AL">Alagoas</option>
 						<option value="AP">Amapá</option>
@@ -284,7 +286,78 @@ $(document).ready(function(){
 	$('#est').mask('000.000.000.000', {reverse: true});
 	$('#telefone').mask('(00) 00000-0000');
 });
+
 </script>
+<script type="text/javascript" >
+ function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('logradouro').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+           
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('logradouro').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+            
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('logradouro').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+               
+
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    };
+
+    </script>
 </body>
 </html>
 

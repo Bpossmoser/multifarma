@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("conexao.php");
 
     $nome_produto = $_POST['nome_produto'];
@@ -8,13 +9,14 @@
     $peso = $_POST['peso'];
     $preco = $_POST['preco'];
     $imagetmp= addslashes (file_get_contents($_FILES['foto']['tmp_name']));
+    $farmacia = $_SESSION['idFarmacia'];
     //$foto= $_POST['foto'];
 
     $imagetmp = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
     //$imagetmp = $_FILES['foto']['tmp_name'];
 
-    $sql = "INSERT INTO cadastro_produtos (nome_produto, datac, descricao, tipo, peso, preco, foto) 
-    VALUES ('$nome_produto', '$data_cadastro',  '$descricao',  '$tipo','$peso', '$preco', '$imagetmp')";
+    $sql = "INSERT INTO cadastro_produtos (nome_produto, datac, descricao, tipo, peso, preco, foto, farmacia) 
+    VALUES ('$nome_produto', '$data_cadastro',  '$descricao',  '$tipo','$peso', '$preco', '$imagetmp', '$farmacia')";
 
         if(mysqli_query($conexao, $sql)){
             echo "Cadastro feito <br>";

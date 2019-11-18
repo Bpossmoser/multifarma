@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="ept-br">
 
@@ -11,6 +9,7 @@ session_start();
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
+  
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
@@ -22,7 +21,10 @@ session_start();
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
-
+  <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js">
+  window.Mercadopago.setPublishableKey("TEST-2bd512fb-5208-471b-8127-1259a9f634a6");
+  window.Mercadopago.getIdentificationTypes();
+  </script>
 </head>
 
 <body>
@@ -58,40 +60,46 @@ session_start();
             <h2 class="h3 mb-3 text-black">Detalhes da Conta</h2>
             <div class="p-3 p-lg-5 border">
              
-              <div class="form-group row">
-                <div class="col-md-6">
-                  <label for="c_fname" class="text-black">Primeiro Nome <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_fname" name="c_fname">
-                </div>
-                <div class="col-md-6">
-                  <label for="c_lname" class="text-black">Sobrenome <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_lname" name="c_lname">
-                </div>
-              </div>
-    
-        
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_address" class="text-black">Endereço <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_address" name="c_address" placeholder="ex: Avenida Recife, 1148, Bairro Novo Cacoal">
-                </div>
-              </div>
-    
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <label for="c_address" class="text-black">Complemento <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_address" name="c_address" placeholder="ex: Perto da prefeitura">
-                </div>
-              </div>
-    
-              <div class="form-group row">
-              
-                <div class="col-md-6">
-                  <label for="c_postal_zip" class="text-black">CEP <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="c_postal_zip" name="c_postal_zip">
-                </div>
-              </div>
-    
+            <form action="" method="post" id="pay" name="pay" >
+    <fieldset>
+        <ul>
+            <li>
+                <label for="email">Email</label>
+                <input id="email" name="email" value="test_user_19653727@testuser.com" type="email" placeholder="your email"/>
+            </li>
+            <li>
+                <label for="cardNumber">Credit card number:</label>
+                <input type="text" id="cardNumber" data-checkout="cardNumber" placeholder="4509 9535 6623 3704" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+            </li>
+            <li>
+                <label for="securityCode">Security code:</label>
+                <input type="text" id="securityCode" data-checkout="securityCode" placeholder="123" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+            </li>
+            <li>
+                <label for="cardExpirationMonth">Expiration month:</label>
+                <input type="text" id="cardExpirationMonth" data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+            </li>
+            <li>
+                <label for="cardExpirationYear">Expiration year:</label>
+                <input type="text" id="cardExpirationYear" data-checkout="cardExpirationYear" placeholder="2015" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+            </li>
+            <li>
+                <label for="cardholderName">Card holder name:</label>
+                <input type="text" id="cardholderName" data-checkout="cardholderName" placeholder="APRO" />
+            </li>
+            <li>
+                <label for="docType">Document type:</label>
+                <select id="docType" data-checkout="docType"></select>
+            </li>
+            <li>
+                <label for="docNumber">Document number:</label>
+                <input type="text" id="docNumber" data-checkout="docNumber" placeholder="12345678" />
+            </li>
+        </ul>
+        <input type="hidden" name="paymentMethodId" />
+        <input type="submit" value="Pay!" />
+    </fieldset>
+</form>
               
               <div class="form-group">
                 <label for="c_create_account" class="text-black" data-toggle="collapse" href="#create_an_account"

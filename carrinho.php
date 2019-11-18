@@ -28,7 +28,7 @@
 
 
   <?php 
-  session_start();
+  
   require('nav.php');
   
 	require_once "functions/product.php";
@@ -115,22 +115,22 @@
                       <?php echo $result['subtotal']?>
                     </td>
                     <td>
-                      <a href="carrinho.php?acao=del&id=<?php echo $result['id']?>">Remover Produto</a>
+                      <a href="carrinho.php?acao=del&id=<?php if(isset($_SESSION['id'])){ echo '?id=' . $_SESSION['id'];} ?>">Remover Produto</a>
                     </td>
                 <?php }?>
                 </table>
+                <div class="row">
+              <input type="submit" value="Atualizar Campos"  class="btn btn-outline-info btn-sm" style="margin-left: 2%">
+            <a class="btn btn-outline-info btn-sm" style="margin-left:15px" onclick="window.location='shop.php'">Continuar Comprando</a>    
             </div>
-            <div class="row">
-            <a class="buy-now btn btn-sm px-4" onclick="window.location='shop.php'">Continuar Comprando</a>
-            </a>
               <div class="col-md-6">
                 </div>
-                </tbody>
+                </tbody> 
           <br><br><br><br>
-          <div class="col-md-6 pl-5">
+          <div class="col-md-6 pl-5" style="margin-left: 50%">
             <div class="row justify-content-end">
               <div class="col-md-7">
-                <div class="row">
+                <div class="row" >
                   <div class="col-md-12 text-right border-bottom mb-5">
                     <h3 class="text-black h4 text-uppercase">Total</h3>
                   </div>

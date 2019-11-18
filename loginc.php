@@ -26,7 +26,8 @@ if ($conexao == true)
         $_SESSION['email'] = $email;
         $_SESSION['senha'] = $senha;
         $_SESSION['nome'] = $nome['nome'];
-        header("location:shop.php?id=$id");
+        $_SESSION['id'] = $id;
+        header("location:shop.php");
         }
     else {
 

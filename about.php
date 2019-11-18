@@ -52,7 +52,7 @@
           while ($row_prof = mysqli_fetch_assoc($resultado)) {
 
             echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
-            echo "<a href='farmacia.php?id=" . $row_prof['id'] . "'> ";
+            echo "<a href='farmacia.php?farmacia=" . $row_prof['id'] . "'> ";
             echo '<img src="data:image/png;base64,'. base64_encode($row_prof['foto']).'" width = 300 heigth = 300 />';
             echo "<h3 class='text-dark'><a href='farmacia.php'>" . $row_prof['fantasia'] . "</a></h3>";
             echo "</div>";

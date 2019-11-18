@@ -1,12 +1,14 @@
 <?php 
-
+  session_start();
   require "./conexao.php";
-  $id = $_GET['id'];
 
-  $SelectImage ="SELECT * FROM cadfarmacia WHERE id = $id";
-  $GetImage = mysqli_query($conexao, $SelectImage);
-  $GetImageAssoc = mysqli_fetch_assoc($GetImage);  
+    $id = $_SESSION['idFarmacia'];
 
+    $SelectImage ="SELECT * FROM cadfarmacia WHERE id = $id";
+    $GetImage = mysqli_query($conexao, $SelectImage);
+    $GetImageAssoc = mysqli_fetch_assoc($GetImage);
+        
+  
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +52,7 @@
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
                 <li><a href="cadastro_produto.html">Cadastrar Produtos</a></li>
-                <li><a href="pedidos.php?id=<?php echo $id ?>">Pedidos</a></li>
+                <li><a href="pedidos.php">Pedidos</a></li>
                 <li><a href="#">Alterar Perfil</a></li>
                 <li><a href="indexfarmacia.php">Estoque</a></li>
                   </ul>
@@ -60,7 +62,6 @@
           <div class="icons">
             
           <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php
-            session_start();   
             $_SESSION['fantasia'] = $GetImageAssoc['fantasia'];
             echo"Olá, " . $_SESSION['fantasia'];
             ?>  </a>
@@ -95,54 +96,37 @@
     // echo '<div class="site-blocks-cover" style="background-image: url("data:image/png;base64,'. base64_encode($Produto['foto']).'");"></div>';
 
     // endforeach; -->
-
+   
     <div class="site-section">
+   
+
       <div class="container">
         <div class="row">
           <div class="title-section text-center col-12">
             <h2 class="text-uppercase">Estoque</h2>
           </div>
         </div>
+<div class="row">
+        <?php 
+ 
+ require_once "./functions/product.php";
+ $pdoConexao = require_once "./connection.php";
+ $Produto = getProductsOfPharma($pdoConexao, $_SESSION['idFarmacia']);
+ foreach($Produto as $Prod){
 
-        <div class="row">
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+
+echo "<div class='col-sm-6 col-lg-4 text-center item mb-4'>";
+               echo "<a href='produto.php?id=".$Prod['id']."'>";
+               echo '<img src="data:image/png;base64,'. base64_encode($Prod['foto']).'" width = 250 heigth = 250 />';
+               echo "<h3 class='text-dark'><a href='#'>" . $Prod['nome_produto'] . "</a></h3>";
+               echo "<p class='price'>R$ " . $Prod['preco'] . "</p>";
+               echo "</div>";
            
-            <a href="farmacia1.html"> <img src="images/product_01.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php">Bioderma</a></h3>
-            <p class="price"><del>95.00</del> &mdash; $55.00</p>
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="produto.php"> <img src="images/product_02.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php">Chanca Piedra</a></h3>
-            <p class="price">$70.00</p>
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="produto.php"> <img src="images/product_03.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php">Umcka Cold Care</a></h3>
-            <p class="price">$120.00</p>
-          </div>
-
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-
-            <a href="produto.php"> <img src="images/product_04.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php">Cetyl Pure</a></h3>
-            <p class="price"><del>45.00</del> &mdash; $20.00</p>
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
-            <a href="produto.php"> <img src="images/product_05.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php">CLA Core</a></h3>
-            <p class="price">$38.00</p>
-          </div>
-          <div class="col-sm-6 col-lg-4 text-center item mb-4">
+  
            
-            <a href="produto.php"> <img src="images/product_06.png" alt="Image"></a>
-            <h3 class="text-dark"><a href="produto.php">Poo Pourri</a></h3>
-            <p class="price"><del>$89</del> &mdash; $38.00</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+          }
+            ?>
+</div>
     <hr>
     
 

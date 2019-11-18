@@ -13,3 +13,10 @@ function getProductsByIds($pdo, $ids) {
 	$stmt->execute();
 	return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getProductsOfPharma($pdo, $farmaId){
+	$sql = "SELECT *  FROM cadastro_produtos WHERE farmacia = ". $farmaId;
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute();
+	return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

@@ -1,7 +1,7 @@
 <?php 
-
+session_start();
   require "./conexao.php";
-  $id = $_GET['id'];
+  $id = $_SESSION['idFarmacia'];
 
   $SelectImage ="SELECT * FROM cadfarmacia WHERE id = $id";
   $GetImage = mysqli_query($conexao, $SelectImage);
@@ -71,7 +71,7 @@
           <div class="icons">  
             
           <a href="login_farmacia.html"><i class="fas fa-clinic-medical"></i><?php   
-            session_start();
+            
             $_SESSION['fantasia'] = $GetImageAssoc['fantasia'];
             echo"Olá, " . $_SESSION['fantasia'];
         
