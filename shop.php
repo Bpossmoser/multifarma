@@ -22,6 +22,8 @@ session_start();
   <link rel="stylesheet" href="css/aos.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ranger.css">
+  
 
 </head>
 
@@ -41,27 +43,40 @@ session_start();
         </div>
       </div>
     </div>
-
     <div class="site-section">
-      <div class="container">
+
+    <div class="box" id="box">
+      <div id="value"></div>
+    </div>
+        <div class="container">
+          <form action="filtropreco.php" method="POST">
+            <input type="range" min="0" max="700" value ="50" class="slider" id="slider" name="valor">
+            <input type="submit" class="buy-now btn btn-sm  px-3 py-1 btn-danger " style="margin-left: 10px;padding-buttom: 10px"  value="FILTRAR">
+         </form>
+
+
+
 
         <div class="row">
-          <div class="col-lg-6">
-            <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Preço</h3>
-            <div id="slider-range" class="border-primary"></div>
-            <input type="text" name="filtro" id="amount" class="form-control border-0 pl-0 bg-white">
-          </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 ">
             <h3 class="mb-3 h6 text-uppercase text-black d-block">Filtrar por Referência</h3>
             <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference" data-toggle="dropdown">Reference</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-              <a class="dropdown-item" href="#">Relevância</a>
               <a class="dropdown-item" href="filtro.php">Nome, A to Z</a>
               <a class="dropdown-item" href="filtro1.php">Nome, Z to A</a>
             </div>
           </div>
+          <script type="text/javascript">
+     var slider=document.getElementById("slider");
+      var val=document.getElementById("value");
+      var valor = document.getElementById("valor");
+      val.innerHTML= slider.value;
+      slider.oninput=function(){
+        val.innerHTML=this.value;
+        valor.innerHTML= this.value;
+      }
+     </script>
         </div>
-        
 
         <div class="row">
 
@@ -160,8 +175,7 @@ session_start();
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/aos.js"></script>
-
   <script src="js/main.js"></script>
-
+ 
 </body>
 </html>

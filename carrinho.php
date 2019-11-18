@@ -28,8 +28,9 @@
 
 
   <?php 
-  require('nav.php');
   session_start();
+  require('nav.php');
+  
 	require_once "functions/product.php";
 	require_once "functions/cart.php";
  
