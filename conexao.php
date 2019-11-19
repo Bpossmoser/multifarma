@@ -1,7 +1,7 @@
 <?php
     $servidor="localhost";
-    $usuario="root";
-    $senha="";
+    $usuario="vsgfv5ppza02";
+    $senha="@Multifarma123";
     $db="multifarma";
 
     $conexao = mysqli_connect($servidor, $usuario, $senha, $db);
